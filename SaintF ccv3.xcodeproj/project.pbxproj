@@ -212,6 +212,24 @@
 		C02B671919316E6400717D1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B671819316E6400717D1D /* AppDelegate.m */; };
 		C02B671C19316E6400717D1D /* HelloWorldScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B671B19316E6400717D1D /* HelloWorldScene.m */; };
 		C02B671F19316E6400717D1D /* IntroScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B671E19316E6400717D1D /* IntroScene.m */; };
+		C02B674119316ED600717D1D /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B672A19316ED600717D1D /* BackgroundLayer.m */; };
+		C02B674219316ED600717D1D /* BGObjectInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B672C19316ED600717D1D /* BGObjectInfo.m */; };
+		C02B674319316ED600717D1D /* Creep.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B672E19316ED600717D1D /* Creep.m */; };
+		C02B674419316ED600717D1D /* FlowingAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B673019316ED600717D1D /* FlowingAnimation.m */; };
+		C02B674519316ED600717D1D /* GameLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B673219316ED600717D1D /* GameLogic.m */; };
+		C02B674619316ED600717D1D /* GameScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B673419316ED600717D1D /* GameScreen.m */; };
+		C02B674719316ED600717D1D /* GUILayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B673619316ED600717D1D /* GUILayer.m */; };
+		C02B674819316ED600717D1D /* Hero.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B673819316ED600717D1D /* Hero.m */; };
+		C02B674919316ED600717D1D /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B673A19316ED600717D1D /* IntroLayer.m */; };
+		C02B674A19316ED600717D1D /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B673C19316ED600717D1D /* Level.m */; };
+		C02B674B19316ED600717D1D /* MainGameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B673E19316ED600717D1D /* MainGameLayer.m */; };
+		C02B674C19316ED600717D1D /* MainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B674019316ED600717D1D /* MainMenu.m */; };
+		C02B675E1931703300717D1D /* atlas-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = C02B674E1931703300717D1D /* atlas-hd.plist */; };
+		C02B675F1931703300717D1D /* atlas-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = C02B674F1931703300717D1D /* atlas-hd.png */; };
+		C02B67601931703300717D1D /* atlas-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = C02B67501931703300717D1D /* atlas-ipadhd.plist */; };
+		C02B67611931703300717D1D /* atlas-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = C02B67511931703300717D1D /* atlas-ipadhd.png */; };
+		C02B67621931703300717D1D /* atlas.plist in Resources */ = {isa = PBXBuildFile; fileRef = C02B67521931703300717D1D /* atlas.plist */; };
+		C02B67631931703300717D1D /* atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = C02B67531931703300717D1D /* atlas.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -653,6 +671,36 @@
 		C02B671B19316E6400717D1D /* HelloWorldScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HelloWorldScene.m; path = Classes/HelloWorldScene.m; sourceTree = "<group>"; };
 		C02B671D19316E6400717D1D /* IntroScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IntroScene.h; path = Classes/IntroScene.h; sourceTree = "<group>"; };
 		C02B671E19316E6400717D1D /* IntroScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = IntroScene.m; path = Classes/IntroScene.m; sourceTree = "<group>"; };
+		C02B672919316ED600717D1D /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundLayer.h; sourceTree = "<group>"; };
+		C02B672A19316ED600717D1D /* BackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundLayer.m; sourceTree = "<group>"; };
+		C02B672B19316ED600717D1D /* BGObjectInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGObjectInfo.h; sourceTree = "<group>"; };
+		C02B672C19316ED600717D1D /* BGObjectInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGObjectInfo.m; sourceTree = "<group>"; };
+		C02B672D19316ED600717D1D /* Creep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Creep.h; sourceTree = "<group>"; };
+		C02B672E19316ED600717D1D /* Creep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Creep.m; sourceTree = "<group>"; };
+		C02B672F19316ED600717D1D /* FlowingAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowingAnimation.h; sourceTree = "<group>"; };
+		C02B673019316ED600717D1D /* FlowingAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowingAnimation.m; sourceTree = "<group>"; };
+		C02B673119316ED600717D1D /* GameLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLogic.h; sourceTree = "<group>"; };
+		C02B673219316ED600717D1D /* GameLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLogic.m; sourceTree = "<group>"; };
+		C02B673319316ED600717D1D /* GameScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScreen.h; sourceTree = "<group>"; };
+		C02B673419316ED600717D1D /* GameScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScreen.m; sourceTree = "<group>"; };
+		C02B673519316ED600717D1D /* GUILayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUILayer.h; sourceTree = "<group>"; };
+		C02B673619316ED600717D1D /* GUILayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUILayer.m; sourceTree = "<group>"; };
+		C02B673719316ED600717D1D /* Hero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hero.h; sourceTree = "<group>"; };
+		C02B673819316ED600717D1D /* Hero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hero.m; sourceTree = "<group>"; };
+		C02B673919316ED600717D1D /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
+		C02B673A19316ED600717D1D /* IntroLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
+		C02B673B19316ED600717D1D /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
+		C02B673C19316ED600717D1D /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
+		C02B673D19316ED600717D1D /* MainGameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainGameLayer.h; sourceTree = "<group>"; };
+		C02B673E19316ED600717D1D /* MainGameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainGameLayer.m; sourceTree = "<group>"; };
+		C02B673F19316ED600717D1D /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenu.h; sourceTree = "<group>"; };
+		C02B674019316ED600717D1D /* MainMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenu.m; sourceTree = "<group>"; };
+		C02B674E1931703300717D1D /* atlas-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "atlas-hd.plist"; sourceTree = "<group>"; };
+		C02B674F1931703300717D1D /* atlas-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "atlas-hd.png"; sourceTree = "<group>"; };
+		C02B67501931703300717D1D /* atlas-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "atlas-ipadhd.plist"; sourceTree = "<group>"; };
+		C02B67511931703300717D1D /* atlas-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "atlas-ipadhd.png"; sourceTree = "<group>"; };
+		C02B67521931703300717D1D /* atlas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = atlas.plist; sourceTree = "<group>"; };
+		C02B67531931703300717D1D /* atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = atlas.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -713,6 +761,7 @@
 		C02B648719316E6100717D1D /* SaintF ccv3 */ = {
 			isa = PBXGroup;
 			children = (
+				C02B672819316ED600717D1D /* Game */,
 				C02B648819316E6100717D1D /* Resources */,
 				C02B64B119316E6100717D1D /* Libraries */,
 				C02B671619316E6400717D1D /* Classes */,
@@ -724,6 +773,7 @@
 		C02B648819316E6100717D1D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C02B674D1931703300717D1D /* atlas */,
 				C02B648919316E6100717D1D /* Default.png */,
 				C02B648B19316E6100717D1D /* Default@2x.png */,
 				C02B648D19316E6100717D1D /* Default-568h@2x.png */,
@@ -1550,6 +1600,51 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
+		C02B672819316ED600717D1D /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				C02B672919316ED600717D1D /* BackgroundLayer.h */,
+				C02B672A19316ED600717D1D /* BackgroundLayer.m */,
+				C02B672B19316ED600717D1D /* BGObjectInfo.h */,
+				C02B672C19316ED600717D1D /* BGObjectInfo.m */,
+				C02B672D19316ED600717D1D /* Creep.h */,
+				C02B672E19316ED600717D1D /* Creep.m */,
+				C02B672F19316ED600717D1D /* FlowingAnimation.h */,
+				C02B673019316ED600717D1D /* FlowingAnimation.m */,
+				C02B673119316ED600717D1D /* GameLogic.h */,
+				C02B673219316ED600717D1D /* GameLogic.m */,
+				C02B673319316ED600717D1D /* GameScreen.h */,
+				C02B673419316ED600717D1D /* GameScreen.m */,
+				C02B673519316ED600717D1D /* GUILayer.h */,
+				C02B673619316ED600717D1D /* GUILayer.m */,
+				C02B673719316ED600717D1D /* Hero.h */,
+				C02B673819316ED600717D1D /* Hero.m */,
+				C02B673919316ED600717D1D /* IntroLayer.h */,
+				C02B673A19316ED600717D1D /* IntroLayer.m */,
+				C02B673B19316ED600717D1D /* Level.h */,
+				C02B673C19316ED600717D1D /* Level.m */,
+				C02B673D19316ED600717D1D /* MainGameLayer.h */,
+				C02B673E19316ED600717D1D /* MainGameLayer.m */,
+				C02B673F19316ED600717D1D /* MainMenu.h */,
+				C02B674019316ED600717D1D /* MainMenu.m */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		C02B674D1931703300717D1D /* atlas */ = {
+			isa = PBXGroup;
+			children = (
+				C02B674E1931703300717D1D /* atlas-hd.plist */,
+				C02B674F1931703300717D1D /* atlas-hd.png */,
+				C02B67501931703300717D1D /* atlas-ipadhd.plist */,
+				C02B67511931703300717D1D /* atlas-ipadhd.png */,
+				C02B67521931703300717D1D /* atlas.plist */,
+				C02B67531931703300717D1D /* atlas.png */,
+			);
+			name = atlas;
+			path = Resources/atlas;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1619,14 +1714,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				C02B648C19316E6100717D1D /* Default@2x.png in Resources */,
+				C02B67631931703300717D1D /* atlas.png in Resources */,
 				C02B649F19316E6100717D1D /* Icon-120.png in Resources */,
 				C02B66A319316E6400717D1D /* LICENSE_CCBReader.txt in Resources */,
 				C02B649519316E6100717D1D /* Icon@2x.png in Resources */,
+				C02B67621931703300717D1D /* atlas.plist in Resources */,
 				C02B64A719316E6100717D1D /* Icon-Small@2x.png in Resources */,
 				C02B649919316E6100717D1D /* Icon-72@2x.png in Resources */,
 				C02B648A19316E6100717D1D /* Default.png in Resources */,
+				C02B675F1931703300717D1D /* atlas-hd.png in Resources */,
 				C02B649319316E6100717D1D /* Icon.png in Resources */,
 				C02B64A119316E6100717D1D /* Icon-iPad-Spotlight-iOS7@2x.png in Resources */,
+				C02B675E1931703300717D1D /* atlas-hd.plist in Resources */,
 				C02B649019316E6100717D1D /* Default-Landscape~ipad.png in Resources */,
 				C02B64A519316E6100717D1D /* Icon-Small.png in Resources */,
 				C02B64A319316E6100717D1D /* Icon-Small-50.png in Resources */,
@@ -1639,9 +1738,11 @@
 				C02B649D19316E6100717D1D /* Icon-76@2x.png in Resources */,
 				C02B671119316E6400717D1D /* LICENSE_Chipmunk.txt in Resources */,
 				C02B64AB19316E6100717D1D /* Icon-Spotlight-iOS7@2x.png in Resources */,
+				C02B67611931703300717D1D /* atlas-ipadhd.png in Resources */,
 				C02B649B19316E6100717D1D /* Icon-76.png in Resources */,
 				C02B667119316E6300717D1D /* ChangeLog in Resources */,
 				C02B64B019316E6100717D1D /* iTunesArtwork@2x in Resources */,
+				C02B67601931703300717D1D /* atlas-ipadhd.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1674,6 +1775,7 @@
 				C02B657E19316E6200717D1D /* CCTextureCache.m in Sources */,
 				C02B65A919316E6200717D1D /* CCAppDelegate.m in Sources */,
 				C02B65AD19316E6200717D1D /* CCDirectorMac.m in Sources */,
+				C02B674A19316ED600717D1D /* Level.m in Sources */,
 				C02B64E119316E6100717D1D /* ccDeprecated.m in Sources */,
 				C02B661019316E6300717D1D /* ALContext.m in Sources */,
 				C02B64EC19316E6100717D1D /* CCDrawNode.m in Sources */,
@@ -1697,6 +1799,7 @@
 				C02B64BC19316E6100717D1D /* CCActionEase.m in Sources */,
 				C02B64CB19316E6100717D1D /* CCActionTween.m in Sources */,
 				C02B663919316E6300717D1D /* NSMutableDictionary+WeakReferences.m in Sources */,
+				C02B674319316ED600717D1D /* Creep.m in Sources */,
 				C02B651619316E6200717D1D /* CCNode+Debug.m in Sources */,
 				C02B64CF19316E6100717D1D /* CCAnimation.m in Sources */,
 				C02B667819316E6300717D1D /* mat3.c in Sources */,
@@ -1720,6 +1823,7 @@
 				C02B652E19316E6200717D1D /* CCPhysicsBody.m in Sources */,
 				C02B65B319316E6300717D1D /* CCWindow.m in Sources */,
 				C02B64C819316E6100717D1D /* CCActionProgressTimer.m in Sources */,
+				C02B674B19316ED600717D1D /* MainGameLayer.m in Sources */,
 				C02B667E19316E6300717D1D /* plane.c in Sources */,
 				C02B660119316E6300717D1D /* OALSimpleAudio.m in Sources */,
 				C02B64F319316E6200717D1D /* CCGLProgram.m in Sources */,
@@ -1732,7 +1836,9 @@
 				C02B650819316E6200717D1D /* CCLayout.m in Sources */,
 				C02B662B19316E6300717D1D /* OALSuspendHandler.m in Sources */,
 				C02B668A19316E6300717D1D /* vec4.c in Sources */,
+				C02B674819316ED600717D1D /* Hero.m in Sources */,
 				C02B659C19316E6200717D1D /* CCDirectorIOS.m in Sources */,
+				C02B674219316ED600717D1D /* BGObjectInfo.m in Sources */,
 				C02B657319316E6200717D1D /* CCSpriteFrameCache.m in Sources */,
 				C02B663219316E6300717D1D /* mach_timing.c in Sources */,
 				C02B661619316E6300717D1D /* ALListener.m in Sources */,
@@ -1741,9 +1847,12 @@
 				C02B653719316E6200717D1D /* CCPhysicsShape.m in Sources */,
 				C02B653F19316E6200717D1D /* CCRenderTexture.m in Sources */,
 				C02B64C519316E6100717D1D /* CCActionManager.m in Sources */,
+				C02B674419316ED600717D1D /* FlowingAnimation.m in Sources */,
+				C02B674C19316ED600717D1D /* MainMenu.m in Sources */,
 				C02B656919316E6200717D1D /* CCSprite9Slice.m in Sources */,
 				C02B657B19316E6200717D1D /* CCTextureAtlas.m in Sources */,
 				C02B663C19316E6300717D1D /* OALAudioFile.m in Sources */,
+				C02B674719316ED600717D1D /* GUILayer.m in Sources */,
 				C02B656219316E6200717D1D /* ccShaders.m in Sources */,
 				C02B667619316E6300717D1D /* matrix.c in Sources */,
 				C02B658819316E6200717D1D /* CCTiledMapLayer.m in Sources */,
@@ -1762,6 +1871,7 @@
 				C02B653419316E6200717D1D /* CCPhysicsNode.m in Sources */,
 				C02B661A19316E6300717D1D /* ALSoundSourcePool.m in Sources */,
 				C02B652919316E6200717D1D /* CCParticleSystemBase.m in Sources */,
+				C02B674619316ED600717D1D /* GameScreen.m in Sources */,
 				C02B65C019316E6300717D1D /* CCColor.m in Sources */,
 				C02B660D19316E6300717D1D /* ALChannelSource.m in Sources */,
 				C02B64B919316E6100717D1D /* CCActionCatmullRom.m in Sources */,
@@ -1778,6 +1888,7 @@
 				C02B65E319316E6300717D1D /* ZipUtils.m in Sources */,
 				C02B65F419316E6300717D1D /* OALUtilityActions.m in Sources */,
 				C02B659F19316E6200717D1D /* CCES2Renderer.m in Sources */,
+				C02B674919316ED600717D1D /* IntroLayer.m in Sources */,
 				C02B666F19316E6300717D1D /* aabb.c in Sources */,
 				C02B669919316E6400717D1D /* CCBsequence.m in Sources */,
 				C02B64FA19316E6200717D1D /* CCLabelAtlas.m in Sources */,
@@ -1785,8 +1896,10 @@
 				C02B661D19316E6300717D1D /* ALSource.m in Sources */,
 				C02B652519316E6200717D1D /* CCParticleSystem.m in Sources */,
 				C02B654A19316E6200717D1D /* CCScene.m in Sources */,
+				C02B674119316ED600717D1D /* BackgroundLayer.m in Sources */,
 				C02B657819316E6200717D1D /* CCTexture.m in Sources */,
 				C02B660A19316E6300717D1D /* ALCaptureDevice.m in Sources */,
+				C02B674519316ED600717D1D /* GameLogic.m in Sources */,
 				C02B654619316E6200717D1D /* CCResponderManager.m in Sources */,
 				C02B64DE19316E6100717D1D /* CCConfiguration.m in Sources */,
 				C02B662119316E6300717D1D /* ALWrapper.m in Sources */,
