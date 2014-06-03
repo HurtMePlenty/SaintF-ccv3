@@ -98,7 +98,7 @@ static GameLogic* _sharedGameLogic;
     {
         [self generateNewObj];
         //we created new bgObject, try to spawn creep
-        int chanceToGen = arc4random() % 2;
+        int chanceToGen = arc4random() % 3;
         if(chanceToGen == 0) {
             [self generateNewCreep];
         }

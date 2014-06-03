@@ -17,7 +17,7 @@
     int showingFrameIndex;
     
     CGPoint _shift;
-    void(^_delegate)(CGPoint);
+    void(^_delegate)(CGPoint, int);
     
 }
 
@@ -25,7 +25,7 @@
 
 @implementation FlowingAnimation
 
--(id)initWithFrames: (NSArray*)frames delay:(float)delay callBack:(void(^)(CGPoint))delegate {
+-(id)initWithFrames: (NSArray*)frames delay:(float)delay callBack:(void(^)(CGPoint, int))delegate {
     if(self = [super init])
     {
         _frames = frames;
@@ -57,11 +57,21 @@
     CCLOG(@"started");
     showingFrameIndex = 0;
     self.visible = true;
+    self.paused = false;
     [self nextFrame];
 }
 
 -(void) stopAnimation {
     self.visible = false;
+    self.paused = true;
+}
+
+-(void)pauseAnimation {
+    self.paused = true;
+}
+
+-(void)resumeAnimation {
+    self.paused = false;
 }
 
 -(void) nextFrame {
@@ -73,8 +83,6 @@
     sprite2.spriteFrame = [_frames objectAtIndex: showingFrameIndex];
     sprite1.opacity = 1;
     sprite2.opacity = 0;
-    
-    
 }
 
 -(void) update:(CCTime)delta{
@@ -108,7 +116,7 @@
     
     if(isOver) {
         if(_delegate){
-            _delegate(_shift);
+            _delegate(_shift, showingFrameIndex);
         }
         [self nextFrame];
     }

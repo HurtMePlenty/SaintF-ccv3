@@ -12,12 +12,25 @@
 
 
 
-@interface Hero : CCNode
+@interface Hero : CCNode {
+    CCSprite* heroSprite;
+    CCSpriteFrame* heroStands;
+    
+    NSMutableArray* updateHandlers;
+    
+    bool isMoving;
+    FlowingAnimation* moveAnimation;
+    MoveDirection currentDirection;
+    float winWidth;
+    
+    bool isCasting;
+    FlowingAnimation* blessAnimation;
+}
 
--(void) startMoving: (MoveDirection)direction;
--(void) stopMoving;
+
 -(void) spawnAtPosition:(CGPoint)position;
 -(CGSize) size;
+-(void) stopAllAndRestoreHero;
 
 +(Hero*) sharedHero;
 

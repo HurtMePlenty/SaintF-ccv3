@@ -16,10 +16,12 @@ typedef enum {
 
 @interface FlowingAnimation : CCSprite
 
--(id)initWithFrames: (NSArray*)frames delay:(float)delay callBack:(void(^)(CGPoint))delegate;
+-(id)initWithFrames: (NSArray*)frames delay:(float)delay callBack:(void(^)(CGPoint, int))delegate;
 -(void) startAnimation;
 -(void) startAnimationWithShift: (CGPoint)shift;
 -(void) setShift: (CGPoint) shift;
 -(void) stopAnimation;
+-(void) pauseAnimation;
+-(void) resumeAnimation;
 
 @end

@@ -8,12 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "cocos2d-ui.h"
 
 
 @interface GUILayer : CCNode {
     
 }
 
+-(void) showProgressBar:(float)percentage;
+-(void) hideProgressBar;
 +(GUILayer*) sharedGUILayer;
 
 @end

@@ -163,7 +163,7 @@
     }
     
     
-    void (^callback)(CGPoint) = ^(CGPoint shift){
+    void (^callback)(CGPoint, int) = ^(CGPoint shift, int showingIndex){
         [self animationMoveCallback:shift];
     };
     moveAnimation = [[FlowingAnimation alloc] initWithFrames:moveFrames delay:moveAnimationDelay callBack:callback];

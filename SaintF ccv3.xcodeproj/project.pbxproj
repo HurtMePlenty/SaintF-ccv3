@@ -230,6 +230,8 @@
 		C02B67611931703300717D1D /* atlas-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = C02B67511931703300717D1D /* atlas-ipadhd.png */; };
 		C02B67621931703300717D1D /* atlas.plist in Resources */ = {isa = PBXBuildFile; fileRef = C02B67521931703300717D1D /* atlas.plist */; };
 		C02B67631931703300717D1D /* atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = C02B67531931703300717D1D /* atlas.png */; };
+		C02B67E31933725700717D1D /* Hero+HeroMove.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B67E21933725700717D1D /* Hero+HeroMove.m */; };
+		C04C3BEB1933C6800062FC7E /* Hero+HeroCast.m in Sources */ = {isa = PBXBuildFile; fileRef = C04C3BEA1933C6800062FC7E /* Hero+HeroCast.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -701,6 +703,10 @@
 		C02B67511931703300717D1D /* atlas-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "atlas-ipadhd.png"; sourceTree = "<group>"; };
 		C02B67521931703300717D1D /* atlas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = atlas.plist; sourceTree = "<group>"; };
 		C02B67531931703300717D1D /* atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = atlas.png; sourceTree = "<group>"; };
+		C02B67E11933725700717D1D /* Hero+HeroMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Hero+HeroMove.h"; sourceTree = "<group>"; };
+		C02B67E21933725700717D1D /* Hero+HeroMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Hero+HeroMove.m"; sourceTree = "<group>"; };
+		C04C3BE91933C6800062FC7E /* Hero+HeroCast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Hero+HeroCast.h"; sourceTree = "<group>"; };
+		C04C3BEA1933C6800062FC7E /* Hero+HeroCast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Hero+HeroCast.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1603,6 +1609,7 @@
 		C02B672819316ED600717D1D /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				C02B67D919336F1D00717D1D /* Hero */,
 				C02B672919316ED600717D1D /* BackgroundLayer.h */,
 				C02B672A19316ED600717D1D /* BackgroundLayer.m */,
 				C02B672B19316ED600717D1D /* BGObjectInfo.h */,
@@ -1617,8 +1624,6 @@
 				C02B673419316ED600717D1D /* GameScreen.m */,
 				C02B673519316ED600717D1D /* GUILayer.h */,
 				C02B673619316ED600717D1D /* GUILayer.m */,
-				C02B673719316ED600717D1D /* Hero.h */,
-				C02B673819316ED600717D1D /* Hero.m */,
 				C02B673919316ED600717D1D /* IntroLayer.h */,
 				C02B673A19316ED600717D1D /* IntroLayer.m */,
 				C02B673B19316ED600717D1D /* Level.h */,
@@ -1643,6 +1648,19 @@
 			);
 			name = atlas;
 			path = Resources/atlas;
+			sourceTree = "<group>";
+		};
+		C02B67D919336F1D00717D1D /* Hero */ = {
+			isa = PBXGroup;
+			children = (
+				C02B673719316ED600717D1D /* Hero.h */,
+				C02B673819316ED600717D1D /* Hero.m */,
+				C02B67E11933725700717D1D /* Hero+HeroMove.h */,
+				C02B67E21933725700717D1D /* Hero+HeroMove.m */,
+				C04C3BE91933C6800062FC7E /* Hero+HeroCast.h */,
+				C04C3BEA1933C6800062FC7E /* Hero+HeroCast.m */,
+			);
+			name = Hero;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1757,6 +1775,7 @@
 				C02B669619316E6300717D1D /* CCBReader.m in Sources */,
 				C02B664619316E6300717D1D /* CCButton.m in Sources */,
 				C02B65F119316E6300717D1D /* OALAudioActions.m in Sources */,
+				C04C3BEB1933C6800062FC7E /* Hero+HeroCast.m in Sources */,
 				C02B663619316E6300717D1D /* NSMutableArray+WeakReferences.m in Sources */,
 				C02B65B019316E6300717D1D /* CCGLView.m in Sources */,
 				C02B667A19316E6300717D1D /* mat4.c in Sources */,
@@ -1789,6 +1808,7 @@
 				C02B658E19316E6200717D1D /* CCTMXXMLParser.m in Sources */,
 				C02B65CE19316E6300717D1D /* CGPointExtension.m in Sources */,
 				C02B665919316E6300717D1D /* CCTextField.m in Sources */,
+				C02B67E31933725700717D1D /* Hero+HeroMove.m in Sources */,
 				C02B65C419316E6300717D1D /* CCProfiling.m in Sources */,
 				C02B65EB19316E6300717D1D /* OALAction.m in Sources */,
 				C02B658119316E6200717D1D /* CCTexturePVR.m in Sources */,
@@ -2102,6 +2122,7 @@
 				C02B672419316E6400717D1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C02B672519316E6400717D1D /* Build configuration list for PBXNativeTarget "SaintF ccv3" */ = {
 			isa = XCConfigurationList;
@@ -2110,6 +2131,7 @@
 				C02B672719316E6400717D1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
