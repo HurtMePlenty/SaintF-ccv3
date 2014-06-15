@@ -7,11 +7,13 @@
 //
 
 #import "MainGameLayer.h"
+#import "BackgroundLayer.h"
+
 
 static MainGameLayer* _sharedMainLayer = nil;
 
 @interface MainGameLayer() {
-
+    CGSize gameLayerSize;
 }
 
 @end
@@ -46,6 +48,11 @@ static MainGameLayer* _sharedMainLayer = nil;
 
 +(CCSpriteBatchNode*)commonBatch {
     return [_sharedMainLayer commonBatch];
+}
+
++(CGSize) size {
+    return [BackgroundLayer gameLayerRect].size;
+    
 }
 
 

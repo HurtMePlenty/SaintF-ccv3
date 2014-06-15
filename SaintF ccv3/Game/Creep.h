@@ -17,17 +17,30 @@ typedef enum {
 } creepTypes;
 
 @interface Creep : CCNode {
-    
+    CGSize winSize;
+    CGSize size;
+    creepTypes creepType;
+    FlowingAnimation* moveAnimation;
+    CCSpriteFrame* standFrame;
+    bool isMoving;
+    float speed;
+    MoveDirection currentDirection;
+    CCSprite* creepSprite;
+    float moveAnimationDelay;
+    float moveAnimationShift;
+    float maxMoveHeight;
+    float minMoveHeight;
+
 }
 
 @property (nonatomic) bool isDead;
 
 -(CGRect) hitBox;
 -(CGSize) size;
--(void)startMoving:(MoveDirection)direction;
 -(void) spawnAtPosition: (CGPoint)position;
 -(id) initWithType: (creepTypes) type;
 -(void) move: (CGPoint) point;
+-(bool) checkIfShouldRemove;
 
 +(Creep*) spawnCreepWithType: (creepTypes) type position: (CGPoint)position;
 

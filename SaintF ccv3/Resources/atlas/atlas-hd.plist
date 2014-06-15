@@ -59,7 +59,7 @@
             <key>hero_move1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{703,595},{72,200}}</string>
+                <string>{{703,599},{72,200}}</string>
                 <key>offset</key>
                 <string>{-1,0}</string>
                 <key>rotated</key>
@@ -111,7 +111,7 @@
             <key>move_new2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{520,397},{73,194}}</string>
+                <string>{{777,2},{73,194}}</string>
                 <key>offset</key>
                 <string>{-1,-3}</string>
                 <key>rotated</key>
@@ -202,6 +202,19 @@
             <key>turn1.png</key>
             <dict>
                 <key>frame</key>
+                <string>{{876,397},{73,200}}</string>
+                <key>offset</key>
+                <string>{1,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{2,0},{73,200}}</string>
+                <key>sourceSize</key>
+                <string>{75,200}</string>
+            </dict>
+            <key>turn1_mask.png</key>
+            <dict>
+                <key>frame</key>
                 <string>{{876,195},{73,200}}</string>
                 <key>offset</key>
                 <string>{1,0}</string>
@@ -228,7 +241,7 @@
             <key>turn3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{876,397},{73,196}}</string>
+                <string>{{520,397},{73,196}}</string>
                 <key>offset</key>
                 <string>{-1,1}</string>
                 <key>rotated</key>
@@ -261,7 +274,7 @@
             <key>size</key>
             <string>{1024,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:4862e919042c8948f88a57f4d5262335$</string>
+            <string>$TexturePacker:SmartUpdate:6a861e7167e7744b716e7a5d770df297$</string>
             <key>textureFileName</key>
             <string>atlas-hd.png</string>
         </dict>

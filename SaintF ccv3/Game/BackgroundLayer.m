@@ -17,9 +17,10 @@ static BackgroundLayer* _sharedBGLayer;
     NSMutableDictionary* bgResources;
     NSMutableArray* bgObjects;
     
-    float winWidth;
-    
     float lastGenAttemptDist;
+    
+    CGRect gameLayerRect;
+    
 }
 
 @end
@@ -28,12 +29,34 @@ static BackgroundLayer* _sharedBGLayer;
 
 -(id)init {
     if(self = [super init]) {
+        CGSize winSize = [[CCDirector sharedDirector] viewSize];
+        
+        
         self.color = [CCColor colorWithRed:0.9f green:0.9f blue:1.0f];
         self.opacity = 1;
+        CCSprite* wood = [CCSprite spriteWithImageNamed:@"wood.png"];
+        wood.position = CGPointMake(wood.contentSize.width / 2, wood.contentSize.height / 2);
+        [self addChild:wood];
+        
+        CCSprite* paper = [CCSprite spriteWithImageNamed:@"paper.png"];
+        float offsetY = winSize.height - paper.contentSize.height; //paper should be bounded to the top of hte screen
+        
+        //set game layer rect
+        float zeroX = 25;
+        float zeroY = offsetY + 25;
+        float width = paper.contentSize.width - 50;
+        float height = paper.contentSize.height - 50;
+        gameLayerRect = CGRectMake(zeroX, zeroY, width, height);
+        
+        paper.position = CGPointMake(paper.contentSize.width / 2, paper.contentSize.height / 2 +offsetY);
+        [self addChild:paper];
     }
     return self;
 }
 
++(CGRect) gameLayerRect {
+    return _sharedBGLayer->gameLayerRect;
+}
 
 +(BackgroundLayer*) sharedBGLayer {
     if(!_sharedBGLayer)

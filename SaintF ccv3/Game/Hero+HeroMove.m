@@ -19,7 +19,7 @@ float scrollDistPerStep; //range we move per 1 animation
 bool shouldStopMoving; //when we stop touch
 
 -(void) buildMoveAnimations {
-
+    
     scrollDistPerStep = moveAnimationShift;
     
     [GameLogic sharedGameLogic].scrollSpeed = scrollDistPerStep / moveAnimationDelay;
@@ -34,7 +34,7 @@ bool shouldStopMoving; //when we stop touch
         [self animationMoveCallback:shift];
     };
     
-
+    
     
     moveAnimation = [[FlowingAnimation alloc] initWithFrames:moveFrames delay:moveAnimationDelay callBack:callback];
     [heroSprite addChild:moveAnimation];
@@ -59,7 +59,9 @@ bool shouldStopMoving; //when we stop touch
     [heroSprite setTextureRect:CGRectZero];
     float allowedShiftX = [self getShiftForDirection:direction];
     [moveAnimation startAnimationWithShift:ccp(allowedShiftX, 0.0f)];
-    [[GameLogic sharedGameLogic] scrollBackgroundFor:scrollShift]; //start scrolling after starting animation
+    //if(allowedShiftX == 0.0f){
+        [[GameLogic sharedGameLogic] scrollBackgroundFor:scrollShift]; //start scrolling after starting animation
+    //}
     isMoving = true;
     shouldStopMoving = false;
 }
@@ -98,7 +100,10 @@ bool shouldStopMoving; //when we stop touch
         //first we move, then calculate next possible shift
         float allowedShiftX = [self getShiftForDirection:currentDirection];
         [moveAnimation setShift:ccp(allowedShiftX, 0.0f)];
-        [[GameLogic sharedGameLogic] scrollBackgroundFor: scrollShift]; //start new animation circle and scroll
+        //if(allowedShiftX == 0.0f){
+            [[GameLogic sharedGameLogic] scrollBackgroundFor: scrollShift]; //start new animation circle and scroll
+            
+        //}
         CCLOG(@"next shift allowedShiftX = %f", allowedShiftX);
     }
 }

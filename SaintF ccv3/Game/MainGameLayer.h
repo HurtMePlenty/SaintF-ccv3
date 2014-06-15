@@ -16,6 +16,7 @@
 
 +(MainGameLayer*) sharedGameLayer;
 +(CCSpriteBatchNode*) commonBatch;
++(CGSize) size;
 
 
 @end

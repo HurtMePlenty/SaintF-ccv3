@@ -11,10 +11,10 @@
 #import "GUILayer.h"
 @implementation Hero (HeroCast)
 
-const int lastBlessFrameIndex = 5;
-const int waitBlessFrameIndex = 3;
+const int lastBlessFrameIndex = 6;
+const int waitBlessFrameIndex = 2;
 const float blessAnimationDelay = 0.3f;
-const float blessChannelingTime = 2.0f;
+const float blessChannelingTime = 4.0f;
 float blessChannelTimeElapsed = 0.0f;
 
 bool blessChanneling = false;
@@ -28,9 +28,9 @@ bool blessChanneling = false;
     CCSpriteFrame* frame4 = [frameCache spriteFrameByName:@"bless1.png"];
     CCSpriteFrame* frame5 = [frameCache spriteFrameByName:@"bless2.png"];
     CCSpriteFrame* frame6 = [frameCache spriteFrameByName:@"bless3.png"];
+    CCSpriteFrame* frame7 = [frameCache spriteFrameByName:@"turn1.png"];
     
-    
-    NSArray* moveFrames = [NSArray arrayWithObjects:frame1, frame2, frame3, frame4, frame5, frame6, nil];
+    NSArray* moveFrames = [NSArray arrayWithObjects:frame1, frame2, frame3, frame4, frame5, frame6, frame7, nil];
     
     void (^callback)(CGPoint, int) = ^(CGPoint shift, int showingIndex){
         [self animationBlessCallback:showingIndex];

@@ -32,7 +32,7 @@ static GameLogic* _sharedGameLogic;
 
 -(id)init {
     if(self = [super init]) {
-        winSize = [[CCDirector sharedDirector] viewSize];
+        winSize = [MainGameLayer size];
         [self buildObjectResourceDict];
     }
     return self;
@@ -53,6 +53,7 @@ static GameLogic* _sharedGameLogic;
 }
 
 -(void) scrollBackgroundFor:(float)length {
+    CCLOG(@"requested to scroll for %f", length);
     requiredScroll += length;
 }
 
@@ -66,6 +67,7 @@ static GameLogic* _sharedGameLogic;
         dx = -dx;
     }
     requiredScroll += dx;
+    CCLOG(@"scrolled for %f left: %f", dx, requiredScroll);
     
     for(int i = 0; i < bgObjects.count; i++){
         CCSprite* bgObj = [bgObjects objectAtIndex:i];
@@ -99,7 +101,7 @@ static GameLogic* _sharedGameLogic;
         [self generateNewObj];
         //we created new bgObject, try to spawn creep
         int chanceToGen = arc4random() % 3;
-        if(chanceToGen == 0) {
+        if(chanceToGen == 0 || true) {
             [self generateNewCreep];
         }
     }

@@ -232,6 +232,15 @@
 		C02B67631931703300717D1D /* atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = C02B67531931703300717D1D /* atlas.png */; };
 		C02B67E31933725700717D1D /* Hero+HeroMove.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B67E21933725700717D1D /* Hero+HeroMove.m */; };
 		C04C3BEB1933C6800062FC7E /* Hero+HeroCast.m in Sources */ = {isa = PBXBuildFile; fileRef = C04C3BEA1933C6800062FC7E /* Hero+HeroCast.m */; };
+		C0A6FB5E193F9465009F5774 /* Creep+CreepMove.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A6FB5D193F9465009F5774 /* Creep+CreepMove.m */; };
+		C0A6FB6719462B36009F5774 /* paper-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = C0A6FB6019462B36009F5774 /* paper-hd.png */; };
+		C0A6FB6819462B36009F5774 /* paper-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = C0A6FB6119462B36009F5774 /* paper-ipadhd.png */; };
+		C0A6FB6919462B36009F5774 /* paper.png in Resources */ = {isa = PBXBuildFile; fileRef = C0A6FB6219462B36009F5774 /* paper.png */; };
+		C0A6FB6A19462B36009F5774 /* wood-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = C0A6FB6419462B36009F5774 /* wood-hd.png */; };
+		C0A6FB6B19462B36009F5774 /* wood-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = C0A6FB6519462B36009F5774 /* wood-ipadhd.png */; };
+		C0A6FB6C19462B36009F5774 /* wood.png in Resources */ = {isa = PBXBuildFile; fileRef = C0A6FB6619462B36009F5774 /* wood.png */; };
+		C0AC2BCF194D04F5008E1BBA /* wood-iphone5hd.png in Resources */ = {isa = PBXBuildFile; fileRef = C0AC2BCE194D04F5008E1BBA /* wood-iphone5hd.png */; };
+		C0AC2BD1194D04FF008E1BBA /* paper-iphone5hd.png in Resources */ = {isa = PBXBuildFile; fileRef = C0AC2BD0194D04FF008E1BBA /* paper-iphone5hd.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -707,6 +716,16 @@
 		C02B67E21933725700717D1D /* Hero+HeroMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Hero+HeroMove.m"; sourceTree = "<group>"; };
 		C04C3BE91933C6800062FC7E /* Hero+HeroCast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Hero+HeroCast.h"; sourceTree = "<group>"; };
 		C04C3BEA1933C6800062FC7E /* Hero+HeroCast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Hero+HeroCast.m"; sourceTree = "<group>"; };
+		C0A6FB5C193F9465009F5774 /* Creep+CreepMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Creep+CreepMove.h"; sourceTree = "<group>"; };
+		C0A6FB5D193F9465009F5774 /* Creep+CreepMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Creep+CreepMove.m"; sourceTree = "<group>"; };
+		C0A6FB6019462B36009F5774 /* paper-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper-hd.png"; sourceTree = "<group>"; };
+		C0A6FB6119462B36009F5774 /* paper-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper-ipadhd.png"; sourceTree = "<group>"; };
+		C0A6FB6219462B36009F5774 /* paper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paper.png; sourceTree = "<group>"; };
+		C0A6FB6419462B36009F5774 /* wood-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood-hd.png"; sourceTree = "<group>"; };
+		C0A6FB6519462B36009F5774 /* wood-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood-ipadhd.png"; sourceTree = "<group>"; };
+		C0A6FB6619462B36009F5774 /* wood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wood.png; sourceTree = "<group>"; };
+		C0AC2BCE194D04F5008E1BBA /* wood-iphone5hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood-iphone5hd.png"; sourceTree = "<group>"; };
+		C0AC2BD0194D04FF008E1BBA /* paper-iphone5hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper-iphone5hd.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -779,6 +798,8 @@
 		C02B648819316E6100717D1D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C0A6FB5F19462B36009F5774 /* paper */,
+				C0A6FB6319462B36009F5774 /* wood */,
 				C02B674D1931703300717D1D /* atlas */,
 				C02B648919316E6100717D1D /* Default.png */,
 				C02B648B19316E6100717D1D /* Default@2x.png */,
@@ -1609,13 +1630,12 @@
 		C02B672819316ED600717D1D /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				C0A6FB5B193F9448009F5774 /* Creep */,
 				C02B67D919336F1D00717D1D /* Hero */,
 				C02B672919316ED600717D1D /* BackgroundLayer.h */,
 				C02B672A19316ED600717D1D /* BackgroundLayer.m */,
 				C02B672B19316ED600717D1D /* BGObjectInfo.h */,
 				C02B672C19316ED600717D1D /* BGObjectInfo.m */,
-				C02B672D19316ED600717D1D /* Creep.h */,
-				C02B672E19316ED600717D1D /* Creep.m */,
 				C02B672F19316ED600717D1D /* FlowingAnimation.h */,
 				C02B673019316ED600717D1D /* FlowingAnimation.m */,
 				C02B673119316ED600717D1D /* GameLogic.h */,
@@ -1661,6 +1681,41 @@
 				C04C3BEA1933C6800062FC7E /* Hero+HeroCast.m */,
 			);
 			name = Hero;
+			sourceTree = "<group>";
+		};
+		C0A6FB5B193F9448009F5774 /* Creep */ = {
+			isa = PBXGroup;
+			children = (
+				C02B672D19316ED600717D1D /* Creep.h */,
+				C02B672E19316ED600717D1D /* Creep.m */,
+				C0A6FB5C193F9465009F5774 /* Creep+CreepMove.h */,
+				C0A6FB5D193F9465009F5774 /* Creep+CreepMove.m */,
+			);
+			name = Creep;
+			sourceTree = "<group>";
+		};
+		C0A6FB5F19462B36009F5774 /* paper */ = {
+			isa = PBXGroup;
+			children = (
+				C0AC2BD0194D04FF008E1BBA /* paper-iphone5hd.png */,
+				C0A6FB6019462B36009F5774 /* paper-hd.png */,
+				C0A6FB6119462B36009F5774 /* paper-ipadhd.png */,
+				C0A6FB6219462B36009F5774 /* paper.png */,
+			);
+			name = paper;
+			path = Resources/paper;
+			sourceTree = "<group>";
+		};
+		C0A6FB6319462B36009F5774 /* wood */ = {
+			isa = PBXGroup;
+			children = (
+				C0AC2BCE194D04F5008E1BBA /* wood-iphone5hd.png */,
+				C0A6FB6419462B36009F5774 /* wood-hd.png */,
+				C0A6FB6519462B36009F5774 /* wood-ipadhd.png */,
+				C0A6FB6619462B36009F5774 /* wood.png */,
+			);
+			name = wood;
+			path = Resources/wood;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1733,11 +1788,14 @@
 			files = (
 				C02B648C19316E6100717D1D /* Default@2x.png in Resources */,
 				C02B67631931703300717D1D /* atlas.png in Resources */,
+				C0A6FB6B19462B36009F5774 /* wood-ipadhd.png in Resources */,
 				C02B649F19316E6100717D1D /* Icon-120.png in Resources */,
 				C02B66A319316E6400717D1D /* LICENSE_CCBReader.txt in Resources */,
 				C02B649519316E6100717D1D /* Icon@2x.png in Resources */,
 				C02B67621931703300717D1D /* atlas.plist in Resources */,
+				C0A6FB6719462B36009F5774 /* paper-hd.png in Resources */,
 				C02B64A719316E6100717D1D /* Icon-Small@2x.png in Resources */,
+				C0A6FB6919462B36009F5774 /* paper.png in Resources */,
 				C02B649919316E6100717D1D /* Icon-72@2x.png in Resources */,
 				C02B648A19316E6100717D1D /* Default.png in Resources */,
 				C02B675F1931703300717D1D /* atlas-hd.png in Resources */,
@@ -1747,7 +1805,12 @@
 				C02B649019316E6100717D1D /* Default-Landscape~ipad.png in Resources */,
 				C02B64A519316E6100717D1D /* Icon-Small.png in Resources */,
 				C02B64A319316E6100717D1D /* Icon-Small-50.png in Resources */,
+				C0AC2BCF194D04F5008E1BBA /* wood-iphone5hd.png in Resources */,
 				C02B668C19316E6300717D1D /* LICENSE_Kazmath.txt in Resources */,
+				C0A6FB6C19462B36009F5774 /* wood.png in Resources */,
+				C0A6FB6819462B36009F5774 /* paper-ipadhd.png in Resources */,
+				C0AC2BD1194D04FF008E1BBA /* paper-iphone5hd.png in Resources */,
+				C0A6FB6A19462B36009F5774 /* wood-hd.png in Resources */,
 				C02B649719316E6100717D1D /* Icon-72.png in Resources */,
 				C02B65E519316E6300717D1D /* LICENSE_cocos2d.txt in Resources */,
 				C02B648E19316E6100717D1D /* Default-568h@2x.png in Resources */,
@@ -1860,6 +1923,7 @@
 				C02B659C19316E6200717D1D /* CCDirectorIOS.m in Sources */,
 				C02B674219316ED600717D1D /* BGObjectInfo.m in Sources */,
 				C02B657319316E6200717D1D /* CCSpriteFrameCache.m in Sources */,
+				C0A6FB5E193F9465009F5774 /* Creep+CreepMove.m in Sources */,
 				C02B663219316E6300717D1D /* mach_timing.c in Sources */,
 				C02B661619316E6300717D1D /* ALListener.m in Sources */,
 				C02B64EF19316E6200717D1D /* ccFPSImages.m in Sources */,

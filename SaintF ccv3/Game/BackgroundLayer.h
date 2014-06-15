@@ -14,6 +14,7 @@
 }
 
 +(BackgroundLayer*) sharedBGLayer;
++(CGRect) gameLayerRect;
 
 
 @end
