@@ -9,14 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-typedef enum {
-    bush,
-    klen,
-    oak,
-    platan,
-    yasen
-    
-} BackgroundObjects;
 
 @interface GameLogic : NSObject
 

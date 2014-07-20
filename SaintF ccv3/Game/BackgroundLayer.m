@@ -31,9 +31,6 @@ static BackgroundLayer* _sharedBGLayer;
     if(self = [super init]) {
         CGSize winSize = [[CCDirector sharedDirector] viewSize];
         
-        
-        self.color = [CCColor colorWithRed:0.9f green:0.9f blue:1.0f];
-        self.opacity = 1;
         CCSprite* wood = [CCSprite spriteWithImageNamed:@"wood.png"];
         wood.position = CGPointMake(wood.contentSize.width / 2, wood.contentSize.height / 2);
         [self addChild:wood];

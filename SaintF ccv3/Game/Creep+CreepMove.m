@@ -7,14 +7,17 @@
 //
 
 #import "Creep+CreepMove.h"
+#import "MainGameLayer.h"
 
 @implementation Creep (CreepMove)
 
 -(void) buildMoveAnimations {
     speed = 1.5f;
     moveAnimationDelay = 0.4f;
-    maxMoveHeight = winSize.height * 0.8;
-    minMoveHeight = winSize.height * 0.5;
+    
+    float gameSceneHeight = [MainGameLayer size].height;
+    maxMoveHeight = gameSceneHeight * 0.85;
+    minMoveHeight = gameSceneHeight * 0.5;
     
     CCSpriteFrameCache* frameCache = [CCSpriteFrameCache sharedSpriteFrameCache];
     NSArray* moveFrames;

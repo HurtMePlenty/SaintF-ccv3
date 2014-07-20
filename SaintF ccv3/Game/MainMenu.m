@@ -41,9 +41,6 @@
     };
     [self addChild:playBtn];
     playBtn.position = ccp(300,300);
-                    
-    
-    
 }
 
 -(void) playGameHandler:(id)sender {

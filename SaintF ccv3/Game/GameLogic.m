@@ -11,18 +11,21 @@
 #import "BGObjectInfo.h"
 #import "MainGameLayer.h"
 #import "Creep.h"
+#import "BackGroundLogic.h"
 
 static GameLogic* _sharedGameLogic;
 
 @interface GameLogic() {
-    NSMutableDictionary* bgResources;
-    NSMutableArray* bgObjects;
+    //NSMutableDictionary* bgResources;
+    //NSMutableArray* bgObjects;
     NSMutableArray* creeps;
     float requiredScroll;
 
     
     float lastGenAttemptDist;
     CGSize winSize;
+    
+    BackGroundLogic* backGroundLogic;
 }
 
 @end
@@ -33,19 +36,17 @@ static GameLogic* _sharedGameLogic;
 -(id)init {
     if(self = [super init]) {
         winSize = [MainGameLayer size];
-        [self buildObjectResourceDict];
+        [self buildLogics];
     }
     return self;
 }
 
-
 -(void) buildInitialBackground {
-    for(int i = 0; i < 5; i++)
-    {
-        [self tryToGenerateNewObj];
-        [self scrollBackgroundFor:90];
-        [self executeScrolling:90];
-    }
+    [backGroundLogic buildInitialBackground];
+}
+
+-(void) buildLogics {
+    backGroundLogic = [[BackGroundLogic alloc] init];
 }
 
 -(void)update:(CCTime)delta {
@@ -69,10 +70,7 @@ static GameLogic* _sharedGameLogic;
     requiredScroll += dx;
     CCLOG(@"scrolled for %f left: %f", dx, requiredScroll);
     
-    for(int i = 0; i < bgObjects.count; i++){
-        CCSprite* bgObj = [bgObjects objectAtIndex:i];
-        bgObj.position = ccpAdd(bgObj.position, ccp(dx, 0));
-    }
+    [backGroundLogic scroll:dx];
     
     [self removeDeadCreeps];
     
@@ -80,31 +78,12 @@ static GameLogic* _sharedGameLogic;
         Creep* creep = [creeps objectAtIndex:i];
         [creep move:ccpAdd(creep.position, ccp(dx,0))];
     }
-    
-    [self tryToGenerateNewObj];
-    
 }
 
--(void) tryToGenerateNewObj {
-    CCSprite* lastObject = [bgObjects lastObject];
-    float distFromLast;
-    
-    if(lastObject){
-        distFromLast = winSize.width - lastObject.position.x;
-    }
-    else {
-        distFromLast = 3000; //hardcoded for nil object. should be divided by 30 :)
-    }
-    
-    if([self shouldGenerateNewObj:distFromLast])
-    {
-        [self generateNewObj];
-        //we created new bgObject, try to spawn creep
-        int chanceToGen = arc4random() % 3;
-        if(chanceToGen == 0 || true) {
-            [self generateNewCreep];
-        }
-    }
+-(void) generateNewCreep {
+    CCLOG(@"Bird spawned");
+    Creep* creep = [Creep spawnCreepWithType:paulin position:ccp(winSize.width, winSize.height * 0.7)];
+    [creeps addObject:creep];
 }
 
 -(bool) shouldGenerateNewObj:(float)distFromLast {
@@ -131,38 +110,9 @@ static GameLogic* _sharedGameLogic;
     
 }
 
--(void) generateNewObj {
-    int type = arc4random() % 5;
-    
-    CCSprite* newObj;
-    
-    /*for(int i = 0; i< bgObjects.count; i++){
-        CCSprite* bgObj = [bgObjects objectAtIndex:i];
-        if(bgObj.tag == type && !bgObj.visible) //for now it will always be a new object. Never use cache, but we save history instead:)
-        {
-            newObj = bgObj;
-        }
-    }*/
-    if(!newObj){
-        BGObjectInfo* info = [bgResources objectForKey:[NSNumber numberWithInt:type]];
-        NSString* objFileName = info.fileName;
-        newObj = [CCSprite spriteWithImageNamed:objFileName];
-        //newObj.name = type;
-        
-        //[self addChild:newObj];
-        [[[MainGameLayer sharedGameLayer] commonBatch] addChild:newObj z:-1];
-        
-        [bgObjects addObject:newObj];
-    }
-    newObj.position = ccp(winSize.width + newObj.contentSize.width / 2, newObj.contentSize.height / 2);
-    newObj.visible = true;
-}
 
--(void) generateNewCreep {
-    CCLOG(@"Bird spawned");
-    Creep* creep = [Creep spawnCreepWithType:paulin position:ccp(winSize.width, winSize.height * 0.7)];
-    [creeps addObject:creep];
-}
+
+
 
 -(void) removeDeadCreeps {
     for(int i = 0; i < creeps.count; i++) {
@@ -174,24 +124,7 @@ static GameLogic* _sharedGameLogic;
     }
 }
 
--(void) buildObjectResourceDict {
-    bgResources = [[NSMutableDictionary alloc] init];
-    
-    BGObjectInfo* bushInfo = [BGObjectInfo BgObjWithFileName:@"bush.png"];
-    BGObjectInfo* klenInfo = [BGObjectInfo BgObjWithFileName:@"klen.png"];
-    BGObjectInfo* oakInfo = [BGObjectInfo BgObjWithFileName:@"oak.png"];
-    BGObjectInfo* platanInfo = [BGObjectInfo BgObjWithFileName:@"platan.png"];
-    BGObjectInfo* yasenInfo = [BGObjectInfo BgObjWithFileName:@"yasen.png"];
-    
-    
-    [bgResources setObject:bushInfo forKey:[NSNumber numberWithInt: bush]];
-    [bgResources setObject:klenInfo forKey:[NSNumber numberWithInt:klen]];
-    [bgResources setObject:oakInfo forKey:[NSNumber numberWithInt:oak]];
-    [bgResources setObject:platanInfo forKey:[NSNumber numberWithInt:platan]];
-    [bgResources setObject:yasenInfo forKey:[NSNumber numberWithInt:yasen]];
-    bgObjects = [[NSMutableArray alloc] init];
-    creeps = [[NSMutableArray alloc]init];
-}
+
 
 +(GameLogic*) sharedGameLogic {
     if(!_sharedGameLogic)

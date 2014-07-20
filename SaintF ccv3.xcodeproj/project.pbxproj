@@ -241,6 +241,7 @@
 		C0A6FB6C19462B36009F5774 /* wood.png in Resources */ = {isa = PBXBuildFile; fileRef = C0A6FB6619462B36009F5774 /* wood.png */; };
 		C0AC2BCF194D04F5008E1BBA /* wood-iphone5hd.png in Resources */ = {isa = PBXBuildFile; fileRef = C0AC2BCE194D04F5008E1BBA /* wood-iphone5hd.png */; };
 		C0AC2BD1194D04FF008E1BBA /* paper-iphone5hd.png in Resources */ = {isa = PBXBuildFile; fileRef = C0AC2BD0194D04FF008E1BBA /* paper-iphone5hd.png */; };
+		C0AC2BD51965994D008E1BBA /* BackGroundLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = C0AC2BD41965994D008E1BBA /* BackGroundLogic.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -726,6 +727,8 @@
 		C0A6FB6619462B36009F5774 /* wood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wood.png; sourceTree = "<group>"; };
 		C0AC2BCE194D04F5008E1BBA /* wood-iphone5hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood-iphone5hd.png"; sourceTree = "<group>"; };
 		C0AC2BD0194D04FF008E1BBA /* paper-iphone5hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper-iphone5hd.png"; sourceTree = "<group>"; };
+		C0AC2BD31965994D008E1BBA /* BackGroundLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackGroundLogic.h; sourceTree = "<group>"; };
+		C0AC2BD41965994D008E1BBA /* BackGroundLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackGroundLogic.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1630,6 +1633,7 @@
 		C02B672819316ED600717D1D /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				C0AC2BD2196598D3008E1BBA /* GameLogic */,
 				C0A6FB5B193F9448009F5774 /* Creep */,
 				C02B67D919336F1D00717D1D /* Hero */,
 				C02B672919316ED600717D1D /* BackgroundLayer.h */,
@@ -1638,8 +1642,6 @@
 				C02B672C19316ED600717D1D /* BGObjectInfo.m */,
 				C02B672F19316ED600717D1D /* FlowingAnimation.h */,
 				C02B673019316ED600717D1D /* FlowingAnimation.m */,
-				C02B673119316ED600717D1D /* GameLogic.h */,
-				C02B673219316ED600717D1D /* GameLogic.m */,
 				C02B673319316ED600717D1D /* GameScreen.h */,
 				C02B673419316ED600717D1D /* GameScreen.m */,
 				C02B673519316ED600717D1D /* GUILayer.h */,
@@ -1716,6 +1718,17 @@
 			);
 			name = wood;
 			path = Resources/wood;
+			sourceTree = "<group>";
+		};
+		C0AC2BD2196598D3008E1BBA /* GameLogic */ = {
+			isa = PBXGroup;
+			children = (
+				C02B673119316ED600717D1D /* GameLogic.h */,
+				C02B673219316ED600717D1D /* GameLogic.m */,
+				C0AC2BD31965994D008E1BBA /* BackGroundLogic.h */,
+				C0AC2BD41965994D008E1BBA /* BackGroundLogic.m */,
+			);
+			name = GameLogic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1982,6 +1995,7 @@
 				C02B654A19316E6200717D1D /* CCScene.m in Sources */,
 				C02B674119316ED600717D1D /* BackgroundLayer.m in Sources */,
 				C02B657819316E6200717D1D /* CCTexture.m in Sources */,
+				C0AC2BD51965994D008E1BBA /* BackGroundLogic.m in Sources */,
 				C02B660A19316E6300717D1D /* ALCaptureDevice.m in Sources */,
 				C02B674519316ED600717D1D /* GameLogic.m in Sources */,
 				C02B654619316E6200717D1D /* CCResponderManager.m in Sources */,
