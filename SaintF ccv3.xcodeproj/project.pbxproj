@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C0093BBC197DD2DC0071266F /* BGObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C0093BBB197DD2DC0071266F /* BGObject.m */; };
 		C02B647019316E6100717D1D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C02B646F19316E6100717D1D /* QuartzCore.framework */; };
 		C02B647219316E6100717D1D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C02B647119316E6100717D1D /* OpenGLES.framework */; };
 		C02B647419316E6100717D1D /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C02B647319316E6100717D1D /* OpenAL.framework */; };
@@ -255,6 +256,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C0093BBA197DD2DC0071266F /* BGObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGObject.h; sourceTree = "<group>"; };
+		C0093BBB197DD2DC0071266F /* BGObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGObject.m; sourceTree = "<group>"; };
 		C02B646C19316E6100717D1D /* SaintF ccv3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SaintF ccv3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C02B646F19316E6100717D1D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C02B647119316E6100717D1D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -752,6 +755,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C0093BB9197DD18A0071266F /* BGObject */ = {
+			isa = PBXGroup;
+			children = (
+				C02B672B19316ED600717D1D /* BGObjectInfo.h */,
+				C02B672C19316ED600717D1D /* BGObjectInfo.m */,
+				C0093BBA197DD2DC0071266F /* BGObject.h */,
+				C0093BBB197DD2DC0071266F /* BGObject.m */,
+			);
+			name = BGObject;
+			sourceTree = "<group>";
+		};
 		C02B646319316E6100717D1D = {
 			isa = PBXGroup;
 			children = (
@@ -1633,13 +1647,12 @@
 		C02B672819316ED600717D1D /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				C0093BB9197DD18A0071266F /* BGObject */,
 				C0AC2BD2196598D3008E1BBA /* GameLogic */,
 				C0A6FB5B193F9448009F5774 /* Creep */,
 				C02B67D919336F1D00717D1D /* Hero */,
 				C02B672919316ED600717D1D /* BackgroundLayer.h */,
 				C02B672A19316ED600717D1D /* BackgroundLayer.m */,
-				C02B672B19316ED600717D1D /* BGObjectInfo.h */,
-				C02B672C19316ED600717D1D /* BGObjectInfo.m */,
 				C02B672F19316ED600717D1D /* FlowingAnimation.h */,
 				C02B673019316ED600717D1D /* FlowingAnimation.m */,
 				C02B673319316ED600717D1D /* GameScreen.h */,
@@ -1977,6 +1990,7 @@
 				C02B664D19316E6300717D1D /* CCControlTextureFactory.m in Sources */,
 				C02B64D219316E6100717D1D /* CCAnimationCache.m in Sources */,
 				C02B665619316E6300717D1D /* CCTableView.m in Sources */,
+				C0093BBC197DD2DC0071266F /* BGObject.m in Sources */,
 				C02B671919316E6400717D1D /* AppDelegate.m in Sources */,
 				C02B64E919316E6100717D1D /* CCDrawingPrimitives.m in Sources */,
 				C02B65DA19316E6300717D1D /* TGAlib.m in Sources */,

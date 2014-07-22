@@ -39,15 +39,15 @@
     }
 }
 
--(void) scroll:(float)dx {
+-(bool) scroll:(float)dx {
     for(int i = 0; i < bgObjects.count; i++){
         CCSprite* bgObj = [bgObjects objectAtIndex:i];
         bgObj.position = ccpAdd(bgObj.position, ccp(dx, 0));
     }
-    [self tryToGenerateNewObj];
+    return [self tryToGenerateNewObj];
 }
 
--(void) tryToGenerateNewObj {
+-(bool) tryToGenerateNewObj {
     CCSprite* lastObject = [bgObjects lastObject];
     float distFromLast;
     
@@ -61,12 +61,9 @@
     if([self shouldGenerateNewObj:distFromLast])
     {
         [self generateNewObj];
-        //we created new bgObject, try to spawn creep
-        int chanceToGen = arc4random() % 3;
-        if(chanceToGen == 0 || true) {
-            //[self generateNewCreep];
-        }
+        return true;
     }
+    return false;
 }
 
 
@@ -106,6 +103,7 @@
      newObj = bgObj;
      }
      }*/
+    
     if(!newObj){
         BGObjectInfo* info = [bgResources objectForKey:[NSNumber numberWithInt:type]];
         NSString* objFileName = info.fileName;

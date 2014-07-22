@@ -19,7 +19,7 @@ typedef enum {
 
 @interface BackGroundLogic : NSObject
 
--(void) scroll:(float)dx;
+-(bool) scroll:(float)dx;
 -(void) buildInitialBackground;
 
 @end

@@ -16,8 +16,6 @@
 static GameLogic* _sharedGameLogic;
 
 @interface GameLogic() {
-    //NSMutableDictionary* bgResources;
-    //NSMutableArray* bgObjects;
     NSMutableArray* creeps;
     float requiredScroll;
 
@@ -37,6 +35,7 @@ static GameLogic* _sharedGameLogic;
     if(self = [super init]) {
         winSize = [MainGameLayer size];
         [self buildLogics];
+        creeps = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -67,10 +66,18 @@ static GameLogic* _sharedGameLogic;
     if (requiredScroll > 0) { //if we go right, bg goes left^^
         dx = -dx;
     }
+    
     requiredScroll += dx;
     CCLOG(@"scrolled for %f left: %f", dx, requiredScroll);
     
-    [backGroundLogic scroll:dx];
+    bool treeSpawned = [backGroundLogic scroll:dx];
+    if (treeSpawned) {
+        //we created new bgObject, try to spawn creep
+        int chanceToGen = arc4random() % 3;
+        if(chanceToGen == 0 || true) {
+            [self generateNewCreep];
+        }
+    }
     
     [self removeDeadCreeps];
     
@@ -107,11 +114,7 @@ static GameLogic* _sharedGameLogic;
     }
     lastGenAttemptDist = distFromLast; //we tried to gen, but random failed. Save last attempt dist
     return false;
-    
 }
-
-
-
 
 
 -(void) removeDeadCreeps {
@@ -123,8 +126,6 @@ static GameLogic* _sharedGameLogic;
         }
     }
 }
-
-
 
 +(GameLogic*) sharedGameLogic {
     if(!_sharedGameLogic)
