@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "FlowingAnimation.h"
+#import "MaskedNode.h"
 
 
-
-@interface Hero : CCNode {
+@interface Hero : CCNode <MaskedNode> {
     CCSprite* heroSprite;
     CCSpriteFrame* heroStands;
     
@@ -21,6 +21,8 @@
     bool isMoving;
     FlowingAnimation* moveAnimation;
     MoveDirection currentDirection;
+    NSArray* moveFrames;
+    int currentMoveFrameIndex;
     float winWidth;
     
     bool isCasting;
@@ -29,9 +31,10 @@
 
 
 -(void) spawnAtPosition:(CGPoint)position;
--(CGSize) size;
+
 -(void) stopAllAndRestoreHero;
 
 +(Hero*) sharedHero;
++(CCSprite*) heroMask;
 
 @end

@@ -44,7 +44,7 @@
     
     //1st frame size is the size of our creep.
     CCSpriteFrame* firstFrame = [moveFrames firstObject];
-    size = firstFrame.rect.size;
+    self.contentSize = firstFrame.rect.size;
 }
 
 -(void)startMoving:(MoveDirection)direction {

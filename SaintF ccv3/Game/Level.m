@@ -16,7 +16,7 @@
 
 +(void) buildLevel {
     Hero* hero = [Hero sharedHero];
-    CGSize heroSize = [hero size];
+    CGSize heroSize = hero.contentSize;
     float spawnX = heroSize.width / 2;
     float spawnY = heroSize.height / 2;
     CGPoint spawnPosition = ccp(spawnX, spawnY);

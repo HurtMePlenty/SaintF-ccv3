@@ -13,7 +13,7 @@
 
 @implementation Hero (HeroMove)
 
-float const moveAnimationShift = 100.0f; // shift to 2nd frame of animation
+float const moveAnimationShift = 10.0f; // shift to 2nd frame of animation
 float const moveAnimationDelay = 0.5f;
 float scrollDistPerStep; //range we move per 1 animation
 bool shouldStopMoving; //when we stop touch
@@ -28,12 +28,11 @@ bool shouldStopMoving; //when we stop touch
     CCSpriteFrameCache* frameCache = [CCSpriteFrameCache sharedSpriteFrameCache];
     CCSpriteFrame* frame1 = [frameCache spriteFrameByName:@"move_new1.png"];
     CCSpriteFrame* frame2 = [frameCache spriteFrameByName:@"move_new2.png"];
-    NSArray* moveFrames = [NSArray arrayWithObjects:frame1, frame2, nil];
+    moveFrames = [NSArray arrayWithObjects:frame1, frame2, nil];
     
     void (^callback)(CGPoint, int) = ^(CGPoint shift, int showingIndex){
-        [self animationMoveCallback:shift];
+        [self animationMoveCallback:shift index:showingIndex];
     };
-    
     
     
     moveAnimation = [[FlowingAnimation alloc] initWithFrames:moveFrames delay:moveAnimationDelay callBack:callback];
@@ -58,6 +57,7 @@ bool shouldStopMoving; //when we stop touch
     
     [heroSprite setTextureRect:CGRectZero];
     float allowedShiftX = [self getShiftForDirection:direction];
+    currentMoveFrameIndex = 0;
     [moveAnimation startAnimationWithShift:ccp(allowedShiftX, 0.0f)];
     //if(allowedShiftX == 0.0f){
         [[GameLogic sharedGameLogic] scrollBackgroundFor:scrollShift]; //start scrolling after starting animation
@@ -82,7 +82,8 @@ bool shouldStopMoving; //when we stop touch
     }
 }
 
--(void) animationMoveCallback: (CGPoint)shift {
+-(void) animationMoveCallback: (CGPoint)shift index:(int)showingIndex {
+    currentMoveFrameIndex = showingIndex;
     float moveDx = shift.x;
     float scrollShift = scrollDistPerStep;
     if(currentDirection == LEFT)

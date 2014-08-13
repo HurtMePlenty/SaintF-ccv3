@@ -10,6 +10,7 @@
 #import "MainGameLayer.h"
 #import "BackgroundLayer.h"
 #import "GameLogic.h"
+#import "NodeUtils.h"
 
 
 
@@ -28,7 +29,7 @@ static Hero* _sharedHero;
     if(self = [super init])
     {
         updateHandlers = [[NSMutableArray alloc] init];
-        winWidth = [[CCDirector sharedDirector] viewSize].width;
+        winWidth = [MainGameLayer size].width;
         [self loadContent];
         
         [self performSelector:@selector(buildMoveAnimations)];
@@ -42,6 +43,7 @@ static Hero* _sharedHero;
     CCSpriteFrameCache* frameCache = [CCSpriteFrameCache sharedSpriteFrameCache];
     heroStands = [frameCache spriteFrameByName:@"turn1.png"];
     [heroSprite setSpriteFrame:heroStands];
+    self.contentSize = heroStands.rect.size;
 }
 
 -(void) spawnAtPosition:(CGPoint)position {
@@ -60,9 +62,8 @@ static Hero* _sharedHero;
     [heroSprite setTextureRect:[heroStands rect]];
 }
 
--(CGSize) size
-{
-    return [heroSprite contentSize];
+-(CGRect) boundingBox {
+    return centeredBoundingBox(self);
 }
 
 -(void)update:(CCTime)delta {
@@ -72,12 +73,31 @@ static Hero* _sharedHero;
     }
 }
 
+-(CCSprite*) mask {
+    CCSprite* mask;
+    if(isMoving) {
+        mask = [moveFrames objectAtIndex:currentMoveFrameIndex];
+    } else {
+        mask = [CCSprite spriteWithImageNamed:@"turn1_mask.png"];
+    }
+    
+    if(currentDirection == LEFT)
+    {
+        mask.rotationalSkewY = 180;
+    };
+    return mask;
+}
+
 +(Hero*) sharedHero {
     if(!_sharedHero)
     {
         _sharedHero = [[Hero alloc] init];
     }
     return _sharedHero;
+}
+
++(CCSprite*)heroMask {
+    return [[Hero sharedHero] mask];
 }
 
 @end

@@ -8,9 +8,15 @@
 
 #import "cocos2d.h"
 #import "CCNode.h"
+#import "BGObjectInfo.h"
 
 @interface BGObject : CCNode
 
--(void) spawnAtPosition: (CGPoint)position;
+@property bool isDead;
+
+-(void) remove;
+-(void) moveBy: (CGPoint) point;
+
++(BGObject*) spawnBGObjectWithInfo: (BGObjectInfo*) info At: (float) x;
 
 @end

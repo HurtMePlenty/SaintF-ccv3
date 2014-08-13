@@ -9,20 +9,20 @@
 #import "BGObjectInfo.h"
 
 @implementation BGObjectInfo
-@synthesize birdSpawnPosition, canSpawnBird, fileName;
+@synthesize birdSpawnPosition, canSpawnCreep, fileName;
 
-+(BGObjectInfo*)BgObjWithFileName:(NSString*)fileName spawnPos:(CGPoint)birdSpawnPosition {
++(BGObjectInfo*)BgObjWithFileName:(NSString*)fileName spawnPos:(CGPoint)creepSpawnPosition {
     BGObjectInfo* objInfo = [[BGObjectInfo alloc] init];
     objInfo.fileName = fileName;
-    objInfo.canSpawnBird = true;
-    objInfo.birdSpawnPosition = birdSpawnPosition;
+    objInfo.canSpawnCreep = true;
+    objInfo.birdSpawnPosition = creepSpawnPosition;
     return objInfo;
 }
 
 +(BGObjectInfo*)BgObjWithFileName:(NSString*)fileName {
     BGObjectInfo* objInfo = [[BGObjectInfo alloc] init];
     objInfo.fileName = fileName;
-    objInfo.canSpawnBird = false;
+    objInfo.canSpawnCreep = false;
     return objInfo;
 }
 

@@ -8,7 +8,6 @@
 
 #import "GameLogic.h"
 #import "cocos2d.h"
-#import "BGObjectInfo.h"
 #import "MainGameLayer.h"
 #import "Creep.h"
 #import "BackGroundLogic.h"

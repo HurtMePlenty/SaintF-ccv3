@@ -9,11 +9,16 @@
 #import "BackGroundLogic.h"
 #import "MainGameLayer.h"
 #import "BGObjectInfo.h"
+#import "BGObject.h"
 
 @interface BackGroundLogic()
 {
     NSMutableArray* bgObjects;
     NSMutableDictionary* bgResources;
+    
+    NSMutableArray* backStageResources;
+    NSMutableDictionary* backStageObjects;
+    
     
     float lastGenAttemptDist;
     
@@ -41,8 +46,10 @@
 
 -(bool) scroll:(float)dx {
     for(int i = 0; i < bgObjects.count; i++){
-        CCSprite* bgObj = [bgObjects objectAtIndex:i];
-        bgObj.position = ccpAdd(bgObj.position, ccp(dx, 0));
+        BGObject* bgObj = [bgObjects objectAtIndex:i];
+        if(!bgObj.isDead) {
+            [bgObj moveBy:ccp(dx, 0)];
+        }
     }
     return [self tryToGenerateNewObj];
 }
@@ -94,7 +101,7 @@
 -(void) generateNewObj {
     int type = arc4random() % 5;
     
-    CCSprite* newObj;
+    BGObject* newObj;
     
     /*for(int i = 0; i< bgObjects.count; i++){
      CCSprite* bgObj = [bgObjects objectAtIndex:i];
@@ -106,14 +113,11 @@
     
     if(!newObj){
         BGObjectInfo* info = [bgResources objectForKey:[NSNumber numberWithInt:type]];
-        NSString* objFileName = info.fileName;
-        newObj = [CCSprite spriteWithImageNamed:objFileName];
-        [[[MainGameLayer sharedGameLayer] commonBatch] addChild:newObj z:-1];
+        newObj = [BGObject spawnBGObjectWithInfo:info At: winSize.width];
+        //[[[MainGameLayer sharedGameLayer] commonBatch] addChild:newObj z:-1];
         
         [bgObjects addObject:newObj];
     }
-    newObj.position = ccp(winSize.width + newObj.contentSize.width / 2, newObj.contentSize.height / 2);
-    newObj.visible = true;
 }
 
 -(void) buildObjectResourceDict {

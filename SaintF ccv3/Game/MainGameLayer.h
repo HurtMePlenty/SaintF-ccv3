@@ -14,6 +14,7 @@
 }
 @property (nonatomic) CCSpriteBatchNode* commonBatch;
 
+-(CGSize) size;
 +(MainGameLayer*) sharedGameLayer;
 +(CCSpriteBatchNode*) commonBatch;
 +(CGSize) size;

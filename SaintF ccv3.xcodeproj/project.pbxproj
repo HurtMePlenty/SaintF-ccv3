@@ -258,6 +258,8 @@
 /* Begin PBXFileReference section */
 		C0093BBA197DD2DC0071266F /* BGObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGObject.h; sourceTree = "<group>"; };
 		C0093BBB197DD2DC0071266F /* BGObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGObject.m; sourceTree = "<group>"; };
+		C0093BBE197FC2410071266F /* NodeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeUtils.h; sourceTree = "<group>"; };
+		C0093BBF1980266C0071266F /* MaskedNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaskedNode.h; sourceTree = "<group>"; };
 		C02B646C19316E6100717D1D /* SaintF ccv3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SaintF ccv3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C02B646F19316E6100717D1D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C02B647119316E6100717D1D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -762,8 +764,17 @@
 				C02B672C19316ED600717D1D /* BGObjectInfo.m */,
 				C0093BBA197DD2DC0071266F /* BGObject.h */,
 				C0093BBB197DD2DC0071266F /* BGObject.m */,
+				C0093BBF1980266C0071266F /* MaskedNode.h */,
 			);
 			name = BGObject;
+			sourceTree = "<group>";
+		};
+		C0093BBD197FC1F40071266F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C0093BBE197FC2410071266F /* NodeUtils.h */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		C02B646319316E6100717D1D = {
@@ -803,6 +814,7 @@
 		C02B648719316E6100717D1D /* SaintF ccv3 */ = {
 			isa = PBXGroup;
 			children = (
+				C0093BBD197FC1F40071266F /* Helpers */,
 				C02B672819316ED600717D1D /* Game */,
 				C02B648819316E6100717D1D /* Resources */,
 				C02B64B119316E6100717D1D /* Libraries */,

@@ -35,7 +35,6 @@
 -(void) loadLayers {
     [self addChild:[BackgroundLayer sharedBGLayer] z:-1];
     [self addChild:[GUILayer sharedGUILayer] z:1];
-
     CGRect gameLayerRect = [BackgroundLayer gameLayerRect]; // main game layer should be bounded to background (should fit paper)
     
     CCNodeColor* stencil = [CCNodeColor nodeWithColor:[CCColor blackColor] width:gameLayerRect.size.width height:gameLayerRect.size.height];
@@ -45,14 +44,12 @@
     clippingNode.position = gameLayerRect.origin;
     [self addChild:clippingNode];
     
- 
     //CCSprite* stencilSprite = [CCSprite spriteWithImageNamed:@"turn1_mask.png"];
     //stencilSprite.position = ccp(stencilSprite.contentSize.width / 2, stencilSprite.contentSize.height / 2);
     
     //CCSprite* stencilSprite2 = [CCSprite spriteWithImageNamed:@"turn1_mask.png"];
     //stencilSprite2.position = ccp(stencilSprite.contentSize.width / 2, stencilSprite.contentSize.height / 2);
     
-
     //clippingNode.alphaThreshold = 0.999f;
     //CCNodeColor* colorNode = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0 green:0 blue:1]];
     //[clippingNode addChild:colorNode]
@@ -61,7 +58,6 @@
     //[clippingNode addChild:[MainGameLayer sharedGameLayer] z:0];
     //clippingNode.position = gameLayerRect.origin;
     //[self addChild:stencilSprite];
-
 }
 
 -(void) loadResources {

@@ -38,6 +38,10 @@ static MainGameLayer* _sharedMainLayer = nil;
     [self addChild:commonBatch];
 }
 
+-(CGSize) size {
+    return [MainGameLayer size];
+}
+
 +(MainGameLayer*) sharedGameLayer {
     if(!_sharedMainLayer)
     {
@@ -52,7 +56,6 @@ static MainGameLayer* _sharedMainLayer = nil;
 
 +(CGSize) size {
     return [BackgroundLayer gameLayerRect].size;
-    
 }
 
 

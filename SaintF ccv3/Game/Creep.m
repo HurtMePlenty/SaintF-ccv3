@@ -9,6 +9,7 @@
 #import "Creep.h"
 #import "Creep+CreepMove.h"
 #import "MainGameLayer.h"
+#import "NodeUtils.h"
 
 @interface Creep() {
     bool wasShown; //was shown on screen at least once. Need to check before remove
@@ -24,7 +25,6 @@
     {
         creepType = type;
         mainGameLayer = [MainGameLayer sharedGameLayer];
-        winSize = [CCDirector sharedDirector].viewSize;
         [self loadContent];
         [self performSelector:@selector(buildMoveAnimations)];
     }
@@ -40,7 +40,7 @@
 
 
 -(bool) checkIfShouldRemove {
-    if(!CGRectIntersectsRect(mainGameLayer.boundingBox, self.hitBox))
+    if(!CGRectIntersectsRect(mainGameLayer.boundingBox, self.boundingBox))
     {
         if(wasShown){
             [self remove];
@@ -75,16 +75,9 @@
     [creepSprite setSpriteFrame:standFrame];
 }
 
--(CGSize) size
-{
-    return size;
-}
 
--(CGRect) hitBox {
-    float x = - size.width / 2;
-    float y = - size.height / 2;
-    CGRect collisionRect = CGRectMake(x, y, size.width, size.height);
-    return CGRectApplyAffineTransform(collisionRect, [self nodeToParentTransform]);
+-(CGRect) boundingBox {
+    return centeredBoundingBox(self);
 }
 
 -(void) remove {
