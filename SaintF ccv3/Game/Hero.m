@@ -76,7 +76,8 @@ static Hero* _sharedHero;
 -(CCSprite*) mask {
     CCSprite* mask;
     if(isMoving) {
-        mask = [moveFrames objectAtIndex:currentMoveFrameIndex];
+        CCSpriteFrame* moveFrame = [moveFrames objectAtIndex:currentMoveFrameIndex];
+        mask = [CCSprite spriteWithSpriteFrame:moveFrame];
     } else {
         mask = [CCSprite spriteWithImageNamed:@"turn1_mask.png"];
     }

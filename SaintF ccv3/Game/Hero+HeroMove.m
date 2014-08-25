@@ -14,7 +14,7 @@
 @implementation Hero (HeroMove)
 
 float const moveAnimationShift = 10.0f; // shift to 2nd frame of animation
-float const moveAnimationDelay = 0.5f;
+float const moveAnimationDelay = 0.4f;
 float scrollDistPerStep; //range we move per 1 animation
 bool shouldStopMoving; //when we stop touch
 

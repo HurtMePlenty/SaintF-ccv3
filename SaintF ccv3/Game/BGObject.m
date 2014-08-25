@@ -23,6 +23,8 @@
     CCSprite* bgObjectClipperSprite; //do not reyse bgObjectSprite. Don't want to detach/attach it each time
     
     CGSize mainGameLayerSize;
+    
+    CCRenderTexture* renderTexture;
 }
 
 @end
@@ -61,14 +63,27 @@
     self.isDead = true;
 }
 
--(void) spawnAtX: (float)x {
+-(void) spawnAtPoint: (CGPoint) point {
     [mainGameLayer addChild:self];
     [batchNode addChild: bgObjectSprite];
+    
+    /*renderTexture = [CCRenderTexture renderTextureWithWidth:bgObjectSprite.contentSize.width height:bgObjectSprite.contentSize.height pixelFormat:CCTexturePixelFormat_Default];
+    renderTexture.autoDraw = true;
+    [renderTexture addChild:bgObjectSprite];
+    bgObjectSprite.position = ccp(bgObjectSprite.contentSize.width / 2, bgObjectSprite.contentSize.height / 2);
+    [mainGameLayer addChild:renderTexture];
+    */
+    
     [mainGameLayer addChild:bgObjectClipper];
-    [self move:ccp(x, bgObjectSprite.contentSize.height / 2)];
+    [self move:ccp(point.x, point.y + bgObjectSprite.contentSize.height / 2)];
+}
+
+-(void) spawnAtX: (float)x {
+    [self spawnAtPoint:ccp(x,0)];
 }
 
 -(void) move: (CGPoint) position {
+    //renderTexture.position = position;
     self.position = bgObjectClipper.position = bgObjectSprite.position = position;
 }
 
@@ -83,6 +98,10 @@
 
 -(CGRect) boundingBox {
     return centeredBoundingBox(self);
+}
+
+-(CGSize) size {
+    return bgObjectSprite.contentSize;
 }
 
 -(id<MaskedNode>) intersectsWithObject {
@@ -109,10 +128,14 @@
     }
 }
 
-+(BGObject*) spawnBGObjectWithInfo:(BGObjectInfo *)info At:(float)x {
++(BGObject*) spawnBGObjectWithInfo:(BGObjectInfo *)info AtX:(float)x {
+    return [BGObject spawnBGObjectWithInfo:info AtPoint:ccp(x, 0)];
+}
+
++(BGObject*) spawnBGObjectWithInfo:(BGObjectInfo *)info AtPoint:(CGPoint)point {
     BGObject* bgObject = [[BGObject alloc] init];
     [bgObject buildWithInfo:info];
-    [bgObject spawnAtX:x];
+    [bgObject spawnAtPoint:point];
     return bgObject;
 }
 

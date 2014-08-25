@@ -16,7 +16,8 @@
 
 -(void) remove;
 -(void) moveBy: (CGPoint) point;
+-(CGSize) size;
 
-+(BGObject*) spawnBGObjectWithInfo: (BGObjectInfo*) info At: (float) x;
-
++(BGObject*) spawnBGObjectWithInfo:(BGObjectInfo *)info AtPoint:(CGPoint)point;
++(BGObject*) spawnBGObjectWithInfo:(BGObjectInfo *)info AtX:(float)x;
 @end

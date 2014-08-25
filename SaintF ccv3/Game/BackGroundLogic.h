@@ -22,4 +22,5 @@ typedef enum {
 -(bool) scroll:(float)dx;
 -(void) buildInitialBackground;
 
+
 @end
