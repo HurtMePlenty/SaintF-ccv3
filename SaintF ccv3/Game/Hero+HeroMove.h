@@ -12,4 +12,5 @@
 
 -(void) startMoving: (MoveDirection)direction;
 -(void) stopMoving;
+-(float) leftBorder;
 @end

@@ -11,12 +11,16 @@
 #import "MainGameLayer.h"
 #import "Creep.h"
 #import "BackGroundLogic.h"
+#import "Hero.h"
+#import "GUILayer.h"
 
 static GameLogic* _sharedGameLogic;
 
 @interface GameLogic() {
     NSMutableArray* creeps;
     float requiredScroll;
+    
+    CCTime gameTimeLeft; // seconds
 
     
     float lastGenAttemptDist;
@@ -35,6 +39,7 @@ static GameLogic* _sharedGameLogic;
         winSize = [MainGameLayer size];
         [self buildLogics];
         creeps = [[NSMutableArray alloc] init];
+        gameTimeLeft = 20; //seconds
     }
     return self;
 }
@@ -49,6 +54,8 @@ static GameLogic* _sharedGameLogic;
 
 -(void)update:(CCTime)delta {
     [self executeScrolling:scrollSpeed * delta];
+    gameTimeLeft -= delta;
+    [[GUILayer sharedGUILayer] updateGameTimeLeft:gameTimeLeft];
 }
 
 -(void) scrollBackgroundFor:(float)length {
@@ -122,6 +129,22 @@ static GameLogic* _sharedGameLogic;
         if(creep.isDead){
             [creeps removeObject:creep];
             i--;
+        }
+    }
+}
+
+-(void) blessCompleted {
+    for(int i = 0; i < creeps.count; i++) {
+        Creep* creep = [creeps objectAtIndex:i];
+        CGRect heroRect = [[Hero sharedHero] boundingBox];
+        CGRect creepRect = [creep boundingBox];
+        float heroX1 = heroRect.origin.x;
+        float heroX2 = heroX1 + heroRect.size.width;
+        float creepX1 = creepRect.origin.x;
+        float creepX2 = creepX1 + creepRect.size.width;
+        if(heroX1 < creepX2 && heroX2 > creepX1){
+            [creep receiveBless];
+            [[GUILayer sharedGUILayer] addScore];
         }
     }
 }

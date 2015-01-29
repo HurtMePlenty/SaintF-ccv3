@@ -59,7 +59,7 @@ static Hero* _sharedHero;
     isCasting = false;
     [blessAnimation stopAnimation];
     [moveAnimation stopAnimation];
-    [heroSprite setTextureRect:[heroStands rect]];
+    [heroSprite setSpriteFrame:heroStands];
 }
 
 -(CGRect) boundingBox {

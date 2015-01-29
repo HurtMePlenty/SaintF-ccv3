@@ -225,14 +225,10 @@
 		C02B674A19316ED600717D1D /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B673C19316ED600717D1D /* Level.m */; };
 		C02B674B19316ED600717D1D /* MainGameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B673E19316ED600717D1D /* MainGameLayer.m */; };
 		C02B674C19316ED600717D1D /* MainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B674019316ED600717D1D /* MainMenu.m */; };
-		C02B675E1931703300717D1D /* atlas-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = C02B674E1931703300717D1D /* atlas-hd.plist */; };
-		C02B675F1931703300717D1D /* atlas-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = C02B674F1931703300717D1D /* atlas-hd.png */; };
-		C02B67601931703300717D1D /* atlas-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = C02B67501931703300717D1D /* atlas-ipadhd.plist */; };
-		C02B67611931703300717D1D /* atlas-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = C02B67511931703300717D1D /* atlas-ipadhd.png */; };
-		C02B67621931703300717D1D /* atlas.plist in Resources */ = {isa = PBXBuildFile; fileRef = C02B67521931703300717D1D /* atlas.plist */; };
-		C02B67631931703300717D1D /* atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = C02B67531931703300717D1D /* atlas.png */; };
 		C02B67E31933725700717D1D /* Hero+HeroMove.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B67E21933725700717D1D /* Hero+HeroMove.m */; };
 		C04C3BEB1933C6800062FC7E /* Hero+HeroCast.m in Sources */ = {isa = PBXBuildFile; fileRef = C04C3BEA1933C6800062FC7E /* Hero+HeroCast.m */; };
+		C059F11B1A48E5220087470A /* bgmusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C059F11A1A48E5220087470A /* bgmusic.mp3 */; };
+		C059F1201A48E5CD0087470A /* GameMusicPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C059F11F1A48E5CD0087470A /* GameMusicPlayer.m */; };
 		C0A6FB5E193F9465009F5774 /* Creep+CreepMove.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A6FB5D193F9465009F5774 /* Creep+CreepMove.m */; };
 		C0A6FB6719462B36009F5774 /* paper-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = C0A6FB6019462B36009F5774 /* paper-hd.png */; };
 		C0A6FB6819462B36009F5774 /* paper-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = C0A6FB6119462B36009F5774 /* paper-ipadhd.png */; };
@@ -243,6 +239,12 @@
 		C0AC2BCF194D04F5008E1BBA /* wood-iphone5hd.png in Resources */ = {isa = PBXBuildFile; fileRef = C0AC2BCE194D04F5008E1BBA /* wood-iphone5hd.png */; };
 		C0AC2BD1194D04FF008E1BBA /* paper-iphone5hd.png in Resources */ = {isa = PBXBuildFile; fileRef = C0AC2BD0194D04FF008E1BBA /* paper-iphone5hd.png */; };
 		C0AC2BD51965994D008E1BBA /* BackGroundLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = C0AC2BD41965994D008E1BBA /* BackGroundLogic.m */; };
+		C0F073A91A558B0E00C88616 /* atlas-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0F073A71A558B0E00C88616 /* atlas-hd.plist */; };
+		C0F073AA1A558B0E00C88616 /* atlas-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = C0F073A81A558B0E00C88616 /* atlas-hd.png */; };
+		C0F073AF1A558C7D00C88616 /* atlas-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0F073AB1A558C7D00C88616 /* atlas-ipadhd.plist */; };
+		C0F073B01A558C7D00C88616 /* atlas-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = C0F073AC1A558C7D00C88616 /* atlas-ipadhd.png */; };
+		C0F073B11A558C7D00C88616 /* atlas.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0F073AD1A558C7D00C88616 /* atlas.plist */; };
+		C0F073B21A558C7D00C88616 /* atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = C0F073AE1A558C7D00C88616 /* atlas.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -712,16 +714,13 @@
 		C02B673E19316ED600717D1D /* MainGameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainGameLayer.m; sourceTree = "<group>"; };
 		C02B673F19316ED600717D1D /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenu.h; sourceTree = "<group>"; };
 		C02B674019316ED600717D1D /* MainMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenu.m; sourceTree = "<group>"; };
-		C02B674E1931703300717D1D /* atlas-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "atlas-hd.plist"; sourceTree = "<group>"; };
-		C02B674F1931703300717D1D /* atlas-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "atlas-hd.png"; sourceTree = "<group>"; };
-		C02B67501931703300717D1D /* atlas-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "atlas-ipadhd.plist"; sourceTree = "<group>"; };
-		C02B67511931703300717D1D /* atlas-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "atlas-ipadhd.png"; sourceTree = "<group>"; };
-		C02B67521931703300717D1D /* atlas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = atlas.plist; sourceTree = "<group>"; };
-		C02B67531931703300717D1D /* atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = atlas.png; sourceTree = "<group>"; };
 		C02B67E11933725700717D1D /* Hero+HeroMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Hero+HeroMove.h"; sourceTree = "<group>"; };
 		C02B67E21933725700717D1D /* Hero+HeroMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Hero+HeroMove.m"; sourceTree = "<group>"; };
 		C04C3BE91933C6800062FC7E /* Hero+HeroCast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Hero+HeroCast.h"; sourceTree = "<group>"; };
 		C04C3BEA1933C6800062FC7E /* Hero+HeroCast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Hero+HeroCast.m"; sourceTree = "<group>"; };
+		C059F11A1A48E5220087470A /* bgmusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bgmusic.mp3; path = Resources/bgmusic.mp3; sourceTree = "<group>"; };
+		C059F11E1A48E5CD0087470A /* GameMusicPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMusicPlayer.h; sourceTree = "<group>"; };
+		C059F11F1A48E5CD0087470A /* GameMusicPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMusicPlayer.m; sourceTree = "<group>"; };
 		C0A6FB5C193F9465009F5774 /* Creep+CreepMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Creep+CreepMove.h"; sourceTree = "<group>"; };
 		C0A6FB5D193F9465009F5774 /* Creep+CreepMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Creep+CreepMove.m"; sourceTree = "<group>"; };
 		C0A6FB6019462B36009F5774 /* paper-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper-hd.png"; sourceTree = "<group>"; };
@@ -734,6 +733,12 @@
 		C0AC2BD0194D04FF008E1BBA /* paper-iphone5hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper-iphone5hd.png"; sourceTree = "<group>"; };
 		C0AC2BD31965994D008E1BBA /* BackGroundLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackGroundLogic.h; sourceTree = "<group>"; };
 		C0AC2BD41965994D008E1BBA /* BackGroundLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackGroundLogic.m; sourceTree = "<group>"; };
+		C0F073A71A558B0E00C88616 /* atlas-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "atlas-hd.plist"; sourceTree = "<group>"; };
+		C0F073A81A558B0E00C88616 /* atlas-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "atlas-hd.png"; sourceTree = "<group>"; };
+		C0F073AB1A558C7D00C88616 /* atlas-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "atlas-ipadhd.plist"; sourceTree = "<group>"; };
+		C0F073AC1A558C7D00C88616 /* atlas-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "atlas-ipadhd.png"; sourceTree = "<group>"; };
+		C0F073AD1A558C7D00C88616 /* atlas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = atlas.plist; sourceTree = "<group>"; };
+		C0F073AE1A558C7D00C88616 /* atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = atlas.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -827,6 +832,7 @@
 		C02B648819316E6100717D1D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C059F11A1A48E5220087470A /* bgmusic.mp3 */,
 				C0A6FB5F19462B36009F5774 /* paper */,
 				C0A6FB6319462B36009F5774 /* wood */,
 				C02B674D1931703300717D1D /* atlas */,
@@ -1679,6 +1685,8 @@
 				C02B673E19316ED600717D1D /* MainGameLayer.m */,
 				C02B673F19316ED600717D1D /* MainMenu.h */,
 				C02B674019316ED600717D1D /* MainMenu.m */,
+				C059F11E1A48E5CD0087470A /* GameMusicPlayer.h */,
+				C059F11F1A48E5CD0087470A /* GameMusicPlayer.m */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -1686,12 +1694,12 @@
 		C02B674D1931703300717D1D /* atlas */ = {
 			isa = PBXGroup;
 			children = (
-				C02B674E1931703300717D1D /* atlas-hd.plist */,
-				C02B674F1931703300717D1D /* atlas-hd.png */,
-				C02B67501931703300717D1D /* atlas-ipadhd.plist */,
-				C02B67511931703300717D1D /* atlas-ipadhd.png */,
-				C02B67521931703300717D1D /* atlas.plist */,
-				C02B67531931703300717D1D /* atlas.png */,
+				C0F073AB1A558C7D00C88616 /* atlas-ipadhd.plist */,
+				C0F073AC1A558C7D00C88616 /* atlas-ipadhd.png */,
+				C0F073AD1A558C7D00C88616 /* atlas.plist */,
+				C0F073AE1A558C7D00C88616 /* atlas.png */,
+				C0F073A71A558B0E00C88616 /* atlas-hd.plist */,
+				C0F073A81A558B0E00C88616 /* atlas-hd.png */,
 			);
 			name = atlas;
 			path = Resources/atlas;
@@ -1800,6 +1808,11 @@
 			attributes = {
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Eliphas;
+				TargetAttributes = {
+					C02B646B19316E6100717D1D = {
+						DevelopmentTeam = R6RMB9BC4L;
+					};
+				};
 			};
 			buildConfigurationList = C02B646719316E6100717D1D /* Build configuration list for PBXProject "SaintF ccv3" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1825,25 +1838,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				C02B648C19316E6100717D1D /* Default@2x.png in Resources */,
-				C02B67631931703300717D1D /* atlas.png in Resources */,
 				C0A6FB6B19462B36009F5774 /* wood-ipadhd.png in Resources */,
 				C02B649F19316E6100717D1D /* Icon-120.png in Resources */,
 				C02B66A319316E6400717D1D /* LICENSE_CCBReader.txt in Resources */,
 				C02B649519316E6100717D1D /* Icon@2x.png in Resources */,
-				C02B67621931703300717D1D /* atlas.plist in Resources */,
 				C0A6FB6719462B36009F5774 /* paper-hd.png in Resources */,
 				C02B64A719316E6100717D1D /* Icon-Small@2x.png in Resources */,
 				C0A6FB6919462B36009F5774 /* paper.png in Resources */,
+				C0F073AF1A558C7D00C88616 /* atlas-ipadhd.plist in Resources */,
 				C02B649919316E6100717D1D /* Icon-72@2x.png in Resources */,
+				C0F073AA1A558B0E00C88616 /* atlas-hd.png in Resources */,
 				C02B648A19316E6100717D1D /* Default.png in Resources */,
-				C02B675F1931703300717D1D /* atlas-hd.png in Resources */,
 				C02B649319316E6100717D1D /* Icon.png in Resources */,
 				C02B64A119316E6100717D1D /* Icon-iPad-Spotlight-iOS7@2x.png in Resources */,
-				C02B675E1931703300717D1D /* atlas-hd.plist in Resources */,
 				C02B649019316E6100717D1D /* Default-Landscape~ipad.png in Resources */,
 				C02B64A519316E6100717D1D /* Icon-Small.png in Resources */,
 				C02B64A319316E6100717D1D /* Icon-Small-50.png in Resources */,
 				C0AC2BCF194D04F5008E1BBA /* wood-iphone5hd.png in Resources */,
+				C059F11B1A48E5220087470A /* bgmusic.mp3 in Resources */,
 				C02B668C19316E6300717D1D /* LICENSE_Kazmath.txt in Resources */,
 				C0A6FB6C19462B36009F5774 /* wood.png in Resources */,
 				C0A6FB6819462B36009F5774 /* paper-ipadhd.png in Resources */,
@@ -1855,13 +1867,15 @@
 				C02B64AE19316E6100717D1D /* iTunesArtwork in Resources */,
 				C02B64A919316E6100717D1D /* Icon-Spotlight-iOS7.png in Resources */,
 				C02B649D19316E6100717D1D /* Icon-76@2x.png in Resources */,
+				C0F073B01A558C7D00C88616 /* atlas-ipadhd.png in Resources */,
 				C02B671119316E6400717D1D /* LICENSE_Chipmunk.txt in Resources */,
 				C02B64AB19316E6100717D1D /* Icon-Spotlight-iOS7@2x.png in Resources */,
-				C02B67611931703300717D1D /* atlas-ipadhd.png in Resources */,
+				C0F073A91A558B0E00C88616 /* atlas-hd.plist in Resources */,
+				C0F073B21A558C7D00C88616 /* atlas.png in Resources */,
+				C0F073B11A558C7D00C88616 /* atlas.plist in Resources */,
 				C02B649B19316E6100717D1D /* Icon-76.png in Resources */,
 				C02B667119316E6300717D1D /* ChangeLog in Resources */,
 				C02B64B019316E6100717D1D /* iTunesArtwork@2x in Resources */,
-				C02B67601931703300717D1D /* atlas-ipadhd.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1982,6 +1996,7 @@
 				C02B667C19316E6300717D1D /* neon_matrix_impl.c in Sources */,
 				C02B650119316E6200717D1D /* CCLabelTTF.m in Sources */,
 				C02B65B619316E6300717D1D /* NSEvent+CC.m in Sources */,
+				C059F1201A48E5CD0087470A /* GameMusicPlayer.m in Sources */,
 				C02B661319316E6300717D1D /* ALDevice.m in Sources */,
 				C02B668619316E6300717D1D /* vec2.c in Sources */,
 				C02B64B619316E6100717D1D /* CCAction.m in Sources */,
@@ -2097,7 +2112,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2117,7 +2132,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2162,6 +2177,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2172,12 +2189,15 @@
 					"\"$(SRCROOT)/$(PROJECT_NAME)/Libraries/Chipmunk/objectivec/include\"",
 				);
 				INFOPLIST_FILE = "SaintF ccv3/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lsqlite3",
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2187,6 +2207,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SaintF ccv3/Supporting Files/Prefix.pch";
@@ -2196,12 +2218,15 @@
 					"\"$(SRCROOT)/$(PROJECT_NAME)/Libraries/Chipmunk/objectivec/include\"",
 				);
 				INFOPLIST_FILE = "SaintF ccv3/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lsqlite3",
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

@@ -15,8 +15,11 @@
     
 }
 
--(void) showProgressBar:(float)percentage;
--(void) hideProgressBar;
+//-(void) showProgressBar:(float)percentage;
+//-(void) hideProgressBar;
 +(GUILayer*) sharedGUILayer;
+-(void) blessStopped;
+-(void) addScore;
+-(void) updateGameTimeLeft: (CCTime)time;
 
 @end

@@ -40,9 +40,19 @@
     CCNodeColor* stencil = [CCNodeColor nodeWithColor:[CCColor blackColor] width:gameLayerRect.size.width height:gameLayerRect.size.height];
     CCClippingNode* clippingNode = [CCClippingNode clippingNodeWithStencil:stencil];
     
+    [MainGameLayer sharedGameLayer].scale = 0.75f;
     [clippingNode addChild: [MainGameLayer sharedGameLayer]];
     clippingNode.position = gameLayerRect.origin;
+    
+    /*CCNodeColor* test = [CCNodeColor nodeWithColor:[CCColor blackColor] width:gameLayerRect.size.width height:gameLayerRect.size.height];
+    test.position = gameLayerRect.origin;
+    test.opacity = 0.2f;
+    test.scale = 0.75f;
+     [self addChild:test]; */
+    
     [self addChild:clippingNode];
+    
+    
     
     //CCSprite* stencilSprite = [CCSprite spriteWithImageNamed:@"turn1_mask.png"];
     //stencilSprite.position = ccp(stencilSprite.contentSize.width / 2, stencilSprite.contentSize.height / 2);

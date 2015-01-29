@@ -17,6 +17,7 @@
 -(void) scrollBackgroundFor:(float)length;
 -(void) buildInitialBackground;
 -(void)update:(CCTime)delta;
+-(void) blessCompleted;
 
 +(GameLogic*) sharedGameLogic;
 

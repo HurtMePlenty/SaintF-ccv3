@@ -86,7 +86,7 @@
 }
 
 -(void) update:(CCTime)delta{
-    if(!self.visible){
+    if(!self.visible || self.paused){
         return;
     }
     

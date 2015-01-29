@@ -14,7 +14,7 @@
 @implementation Hero (HeroMove)
 
 float const moveAnimationShift = 10.0f; // shift to 2nd frame of animation
-float const moveAnimationDelay = 0.4f;
+float const moveAnimationDelay = 0.1f;
 float scrollDistPerStep; //range we move per 1 animation
 bool shouldStopMoving; //when we stop touch
 
@@ -72,7 +72,7 @@ bool shouldStopMoving; //when we stop touch
         distanceAllowed = [self getRightBorder] - self.position.x;
     }
     else {
-        distanceAllowed = self.position.x - [self getLeftBorder];
+        distanceAllowed = self.position.x - [self leftBorder];
     }
     if (moveAnimationShift < distanceAllowed) {
         return moveAnimationShift;
@@ -97,13 +97,12 @@ bool shouldStopMoving; //when we stop touch
     if(shouldStopMoving)
     {
         [self stopAllAndRestoreHero];
-    }else {
+    } else {
         //first we move, then calculate next possible shift
         float allowedShiftX = [self getShiftForDirection:currentDirection];
         [moveAnimation setShift:ccp(allowedShiftX, 0.0f)];
         //if(allowedShiftX == 0.0f){
             [[GameLogic sharedGameLogic] scrollBackgroundFor: scrollShift]; //start new animation circle and scroll
-            
         //}
         CCLOG(@"next shift allowedShiftX = %f", allowedShiftX);
     }
@@ -122,7 +121,7 @@ bool shouldStopMoving; //when we stop touch
     return winWidth / 2.5;
 }
 
--(float) getLeftBorder {
+-(float) leftBorder {
     return winWidth / 5;
 }
 

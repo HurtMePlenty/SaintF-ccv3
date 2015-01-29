@@ -13,5 +13,6 @@
 
 -(CCSprite*) mask;
 -(CGPoint) position;
+-(int) zIndex;
 
 @end

@@ -62,6 +62,7 @@
 
 -(void) loadContent {
     creepSprite = [CCSprite node];
+    creepSprite.cascadeOpacityEnabled = true;
     CCSpriteFrameCache* frameCache = [CCSpriteFrameCache sharedSpriteFrameCache];
     switch (creepType) {
         case paulin:
@@ -78,6 +79,17 @@
 
 -(CGRect) boundingBox {
     return centeredBoundingBox(self);
+}
+
+-(void) receiveBless {
+    [moveAnimation pauseAnimation];
+    CCActionFadeOut* fadeOut = [CCActionFadeOut actionWithDuration:1.0f];
+    CCActionCallBlock* callback = [CCActionCallBlock actionWithBlock: ^(void){
+        [self remove];
+    }];
+    
+    CCActionSequence *sequence = [CCActionSequence actions:fadeOut, callback, nil];
+    [creepSprite runAction: sequence];
 }
 
 -(void) remove {

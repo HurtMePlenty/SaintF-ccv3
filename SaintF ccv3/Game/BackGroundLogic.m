@@ -19,9 +19,6 @@
     NSMutableArray* backStageObjects;
     NSMutableDictionary* backStageResources;
     
-    
-    float lastGenAttemptDist;
-    
     CGSize winSize;
 }
 @end
@@ -75,7 +72,7 @@
     }
     
     
-    if(rightBorder < winSize.width + 300) { //hardcoded right border of screen, where backStage spawns
+    if(rightBorder < winSize.width + 500) { //hardcoded right border of screen, where backStage spawns
         int i = arc4random() % 11;
         BGObjectInfo* backStageObjectInfo = [backStageResources objectForKey:[NSNumber numberWithInt:i]];
         BGObject* backStageObject = [BGObject spawnBGObjectWithInfo:backStageObjectInfo AtX:(rightBorder)];
@@ -86,39 +83,27 @@
 
 -(bool) tryToGenerateNewObj {
     CCSprite* lastObject = [frontLineObjects lastObject];
-    float distFromLast;
-    
+    float rightBorder;
     if(lastObject){
-        distFromLast = winSize.width - lastObject.position.x;
-    }
-    else {
-        distFromLast = 3000; //hardcoded for nil object
-    }
-    
-    if(distFromLast < 150) //if distance from last generated object is less than...
-    {
-        return false;
+        rightBorder = lastObject.position.x + lastObject.contentSize.width / 2;
+    } else {
+        rightBorder = -300.0f;
     }
     
-    bool isReadyNextAttempt = distFromLast - lastGenAttemptDist > 30; //how often do we proc gen attempt
-    if (!isReadyNextAttempt) {
-        return false;
-    }
-    
-    int addChance = distFromLast / 250;
-    int chanceToGen = arc4random() % 9;
-    chanceToGen += addChance * 2;
-    if(chanceToGen > 5) {
-        lastGenAttemptDist = 0;
-        //generate new object
+    if(rightBorder < winSize.width + 500) {
+        float distFromPrevious = arc4random() % 4 + 1;
+        distFromPrevious = distFromPrevious * 40 + 50;
         
         int type = arc4random() % 5;
         BGObjectInfo* info = [frontLineResources objectForKey:[NSNumber numberWithInt:type]];
-        BGObject*  newObj = [BGObject spawnBGObjectWithInfo:info AtX: winSize.width];
+        
+        //CGPoint spawnPoint = ccp(winSize.width, 0);
+        
+        BGObject*  newObj = [BGObject spawnBGObjectWithInfo:info AtX: rightBorder + distFromPrevious];
         [frontLineObjects addObject:newObj];
         return true;
     }
-    lastGenAttemptDist = distFromLast; //we tried to gen, but random failed. Save last attempt dist
+    
     return false;
 }
 
@@ -146,7 +131,7 @@
     backStageResources = [[NSMutableDictionary alloc] init];
     backStageObjects = [[NSMutableArray alloc] init];
     for(int i = 0; i < 11; i++){
-        NSString *fileName = [NSString stringWithFormat:@"bs%02d.png", i + 1]; //or rename files to start with 0?
+        NSString *fileName = [NSString stringWithFormat:@"bs%02i.png", i + 1]; //or rename files to start with 0?
         BGObjectInfo* backStageObjectInfo = [BGObjectInfo BgObjWithFileName:fileName];
         [backStageResources setObject:backStageObjectInfo forKey:[NSNumber numberWithInt:i]];
     }

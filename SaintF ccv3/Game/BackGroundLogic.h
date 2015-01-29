@@ -9,6 +9,8 @@
 #import "cocos2d.h"
 #import <Foundation/Foundation.h>
 
+static int BASE_LINE_HEIGHT = 20.0f;
+
 typedef enum {
     bush,
     klen,

@@ -12,6 +12,7 @@
 #import "Hero.h"
 #import "NodeUtils.h"
 #import "MaskedNode.h"
+#import "BackGroundLogic.h"
 
 
 @interface BGObject(){
@@ -23,8 +24,6 @@
     CCSprite* bgObjectClipperSprite; //do not reyse bgObjectSprite. Don't want to detach/attach it each time
     
     CGSize mainGameLayerSize;
-    
-    CCRenderTexture* renderTexture;
 }
 
 @end
@@ -66,14 +65,6 @@
 -(void) spawnAtPoint: (CGPoint) point {
     [mainGameLayer addChild:self];
     [batchNode addChild: bgObjectSprite];
-    
-    /*renderTexture = [CCRenderTexture renderTextureWithWidth:bgObjectSprite.contentSize.width height:bgObjectSprite.contentSize.height pixelFormat:CCTexturePixelFormat_Default];
-    renderTexture.autoDraw = true;
-    [renderTexture addChild:bgObjectSprite];
-    bgObjectSprite.position = ccp(bgObjectSprite.contentSize.width / 2, bgObjectSprite.contentSize.height / 2);
-    [mainGameLayer addChild:renderTexture];
-    */
-    
     [mainGameLayer addChild:bgObjectClipper];
     [self move:ccp(point.x, point.y + bgObjectSprite.contentSize.height / 2)];
 }
@@ -83,7 +74,6 @@
 }
 
 -(void) move: (CGPoint) position {
-    //renderTexture.position = position;
     self.position = bgObjectClipper.position = bgObjectSprite.position = position;
 }
 
@@ -129,7 +119,7 @@
 }
 
 +(BGObject*) spawnBGObjectWithInfo:(BGObjectInfo *)info AtX:(float)x {
-    return [BGObject spawnBGObjectWithInfo:info AtPoint:ccp(x, 0)];
+    return [BGObject spawnBGObjectWithInfo:info AtPoint:ccp(x, BASE_LINE_HEIGHT)];
 }
 
 +(BGObject*) spawnBGObjectWithInfo:(BGObjectInfo *)info AtPoint:(CGPoint)point {

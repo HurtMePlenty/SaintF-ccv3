@@ -35,6 +35,7 @@ typedef enum {
 
 -(void) move: (CGPoint) point;
 -(bool) checkIfShouldRemove;
+-(void) receiveBless;
 
 +(Creep*) spawnCreepWithType: (creepTypes) type position: (CGPoint)position;
 

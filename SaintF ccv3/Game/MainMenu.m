@@ -8,6 +8,7 @@
 
 #import "MainMenu.h"
 #import "GameScreen.h"
+#import "GameMusicPlayer.h"
 
 @interface MainMenu(){
     CGSize screenSize;
@@ -35,16 +36,34 @@
 }
 
 -(void) createMenu {
-    CCButton* playBtn = [CCButton buttonWithTitle:@"play"];
+    
+    CGSize winSize = [[CCDirector sharedDirector] viewSize];
+    
+    CCSprite* wood = [CCSprite spriteWithImageNamed:@"wood.png"];
+    wood.position = CGPointMake(wood.contentSize.width / 2, wood.contentSize.height / 2);
+    [self addChild:wood];
+    
+    CCSprite* paper = [CCSprite spriteWithImageNamed:@"paper.png"];
+    float offsetY = winSize.height - paper.contentSize.height; //paper should be bounded to the top of hte screen
+    
+    paper.position = CGPointMake(paper.contentSize.width / 2, paper.contentSize.height / 2 + offsetY);
+    [self addChild:paper];
+
+    
+    
+    CCButton* playBtn = [CCButton buttonWithTitle:@"Play"fontName:@"Helvetica" fontSize:36];
+    playBtn.color = [CCColor blackColor];
+    [playBtn setLabelColor:[CCColor blackColor] forState: CCControlStateHighlighted];
     playBtn.block = ^(id sender) {
         [self playGameHandler:sender];
     };
     [self addChild:playBtn];
-    playBtn.position = ccp(300,300);
+    playBtn.position = ccp(winSize.width / 2, paper.contentSize.height / 2 + offsetY);
 }
 
 -(void) playGameHandler:(id)sender {
     CCLOG(@"play click");
+    [GameMusicPlayer playBackgroundMusic];
     [[CCDirector sharedDirector] replaceScene: [GameScreen scene]];
 }
 
