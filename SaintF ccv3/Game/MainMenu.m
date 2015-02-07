@@ -48,7 +48,14 @@
     
     paper.position = CGPointMake(paper.contentSize.width / 2, paper.contentSize.height / 2 + offsetY);
     [self addChild:paper];
-
+    
+    CCSprite* mainArt = [CCSprite spriteWithImageNamed:@"startPicture.png"];
+    mainArt.position = ccp(mainArt.contentSize.width / 2 + 160, mainArt.contentSize.height / 2 + 120);
+    [self addChild:mainArt];
+    
+    CCSprite* artLabel = [CCSprite spriteWithImageNamed:@"startLabel.png"];
+    artLabel.position = ccp(artLabel.contentSize.width / 2 + 110, artLabel.contentSize.height / 2 + 110);
+    [self addChild:artLabel];
     
     
     CCButton* playBtn = [CCButton buttonWithTitle:@"Play"fontName:@"Helvetica" fontSize:36];
@@ -58,7 +65,7 @@
         [self playGameHandler:sender];
     };
     [self addChild:playBtn];
-    playBtn.position = ccp(winSize.width / 2, paper.contentSize.height / 2 + offsetY);
+    playBtn.position = ccp(winSize.width / 2 + 100, paper.contentSize.height / 2 + offsetY);
 }
 
 -(void) playGameHandler:(id)sender {

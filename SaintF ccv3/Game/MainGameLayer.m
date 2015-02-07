@@ -42,6 +42,18 @@ static MainGameLayer* _sharedMainLayer = nil;
     return [MainGameLayer size];
 }
 
+- (void) setOpacity:(CGFloat)opacity
+{
+    [super setOpacity:opacity];
+    for(CCNode* child in [self children]) {
+        [child setOpacity:opacity];
+    }
+    
+    for(CCNode* child in [commonBatch children]) {
+        [child setOpacity:opacity];
+    }
+}
+
 +(MainGameLayer*) sharedGameLayer {
     if(!_sharedMainLayer)
     {

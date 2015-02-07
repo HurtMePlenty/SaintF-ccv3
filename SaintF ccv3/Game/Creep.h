@@ -31,8 +31,6 @@ typedef enum {
 
 }
 
-@property (nonatomic) bool isDead;
-
 -(void) move: (CGPoint) point;
 -(bool) checkIfShouldRemove;
 -(void) receiveBless;

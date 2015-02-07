@@ -21,5 +21,6 @@
 -(void) blessStopped;
 -(void) addScore;
 -(void) updateGameTimeLeft: (CCTime)time;
+-(void) gameOver;
 
 @end

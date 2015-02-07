@@ -13,6 +13,8 @@
 #import "BackGroundLogic.h"
 #import "Hero.h"
 #import "GUILayer.h"
+#import "Constants.h"
+#import "Level.h"
 
 static GameLogic* _sharedGameLogic;
 
@@ -33,18 +35,20 @@ static GameLogic* _sharedGameLogic;
 
 @implementation GameLogic
 @synthesize scrollSpeed; //should be set from hero
+@synthesize isGameOver;
 
 -(id)init {
     if(self = [super init]) {
         winSize = [MainGameLayer size];
         [self buildLogics];
         creeps = [[NSMutableArray alloc] init];
-        gameTimeLeft = 20; //seconds
+        gameTimeLeft = GAME_TIME_MAX; //seconds
     }
     return self;
 }
 
 -(void) buildInitialBackground {
+    isGameOver = false;
     [backGroundLogic buildInitialBackground];
 }
 
@@ -56,6 +60,11 @@ static GameLogic* _sharedGameLogic;
     [self executeScrolling:scrollSpeed * delta];
     gameTimeLeft -= delta;
     [[GUILayer sharedGUILayer] updateGameTimeLeft:gameTimeLeft];
+    if(gameTimeLeft <= 0){
+        isGameOver = true;
+        [Level gameOver];
+        [[GUILayer sharedGUILayer] gameOver];
+    }
 }
 
 -(void) scrollBackgroundFor:(float)length {
@@ -85,8 +94,6 @@ static GameLogic* _sharedGameLogic;
         }
     }
     
-    [self removeDeadCreeps];
-    
     for(int i = 0; i < creeps.count; i++) {
         Creep* creep = [creeps objectAtIndex:i];
         [creep move:ccpAdd(creep.position, ccp(dx,0))];
@@ -110,7 +117,6 @@ static GameLogic* _sharedGameLogic;
         return false;
     }
     
-    
     int addChance = distFromLast / 250;
     int chanceToGen = arc4random() % 9;
     chanceToGen += addChance * 2;
@@ -120,17 +126,6 @@ static GameLogic* _sharedGameLogic;
     }
     lastGenAttemptDist = distFromLast; //we tried to gen, but random failed. Save last attempt dist
     return false;
-}
-
-
--(void) removeDeadCreeps {
-    for(int i = 0; i < creeps.count; i++) {
-        Creep* creep = [creeps objectAtIndex:i];
-        if(creep.isDead){
-            [creeps removeObject:creep];
-            i--;
-        }
-    }
 }
 
 -(void) blessCompleted {
@@ -145,8 +140,18 @@ static GameLogic* _sharedGameLogic;
         if(heroX1 < creepX2 && heroX2 > creepX1){
             [creep receiveBless];
             [[GUILayer sharedGUILayer] addScore];
+            gameTimeLeft += TIME_PER_BLESS;
         }
     }
+}
+
+-(void) removeCreep: (Creep*) creep {
+    [creeps removeObject:creep];
+}
+
+-(void) restartLevel {
+    [creeps removeAllObjects];
+    [backGroundLogic restartLevel];
 }
 
 +(GameLogic*) sharedGameLogic {

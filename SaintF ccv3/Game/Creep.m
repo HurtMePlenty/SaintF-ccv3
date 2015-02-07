@@ -10,6 +10,7 @@
 #import "Creep+CreepMove.h"
 #import "MainGameLayer.h"
 #import "NodeUtils.h"
+#import "GameLogic.h"
 
 @interface Creep() {
     bool wasShown; //was shown on screen at least once. Need to check before remove
@@ -19,7 +20,6 @@
 @end
 
 @implementation Creep
-@synthesize isDead;
 -(id) initWithType: (creepTypes) type {
     if(self = [super init])
     {
@@ -96,7 +96,7 @@
     [moveAnimation stopAnimation];
     [creepSprite removeFromParent];
     [self removeFromParent];
-    isDead = true;
+    [[GameLogic sharedGameLogic] removeCreep:self];
 }
 
 -(void)update:(CCTime)delta {

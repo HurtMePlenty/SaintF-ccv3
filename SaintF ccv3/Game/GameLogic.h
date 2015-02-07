@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "Creep.h"
 
 
 @interface GameLogic : NSObject
@@ -18,6 +19,11 @@
 -(void) buildInitialBackground;
 -(void)update:(CCTime)delta;
 -(void) blessCompleted;
+-(void) removeCreep: (Creep*) creep;
+
+-(void) restartLevel;
+
+@property (nonatomic) bool isGameOver;
 
 +(GameLogic*) sharedGameLogic;
 

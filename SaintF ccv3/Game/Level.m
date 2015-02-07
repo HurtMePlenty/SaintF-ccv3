@@ -11,6 +11,7 @@
 #import "Hero.h"
 #import "Hero+HeroMove.h"
 #import "GameLogic.h"
+#import "MainMenu.h"
 #import "BackGroundLogic.h"
 
 
@@ -29,6 +30,19 @@
 
 +(void) buildBackground {
     [[GameLogic sharedGameLogic] buildInitialBackground];
+}
+
++(void) gameOver {
+    CCActionFadeTo* fadeOut = [CCActionFadeTo actionWithDuration:1.0f opacity:0.3f];
+    CCActionCallBlock* callback = [CCActionCallBlock actionWithBlock: ^(void){
+        [[GameLogic sharedGameLogic] restartLevel];
+    }];
+    
+    CCActionSequence *sequence = [CCActionSequence actions:fadeOut, callback, nil];
+    [[MainGameLayer sharedGameLayer] runAction: sequence];
+    
+    //[[CCDirector sharedDirector] replaceScene: [MainMenu scene]];
+    
 }
 
 @end

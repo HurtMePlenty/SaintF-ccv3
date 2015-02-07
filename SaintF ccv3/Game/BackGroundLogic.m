@@ -137,4 +137,9 @@
     }
 }
 
+-(void) restartLevel {
+    [frontLineObjects removeAllObjects];
+    [backStageObjects removeAllObjects];
+}
+
 @end
