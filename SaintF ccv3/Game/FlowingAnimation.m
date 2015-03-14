@@ -74,6 +74,17 @@
     self.paused = false;
 }
 
+-(void) gameOverStop {
+    self.paused = true;
+    if(sprite1.opacity > 0.5f) {
+        [self removeChild:sprite2];
+    }
+    else
+    {
+        [self removeChild:sprite1];
+    }
+}
+
 -(void) nextFrame {
     sprite1.spriteFrame = [_frames objectAtIndex:showingFrameIndex];
     showingFrameIndex++;

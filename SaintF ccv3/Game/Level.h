@@ -11,6 +11,5 @@
 @interface Level : NSObject
 
 +(void) buildLevel;
-+(void) gameOver;
 
 @end

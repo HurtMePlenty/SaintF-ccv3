@@ -13,6 +13,8 @@
 #import "GameLogic.h"
 #import "BackgroundLayer.h"
 
+static GameScreen* lastGameScreen;
+
 @interface GameScreen() {
     GameLogic* sharedGameLogic;
 }
@@ -23,7 +25,6 @@
 -(id)init{
     if(self = [super init])
     {
-        [self loadResources];
         [self loadLayers];
         [Level buildLevel];
         
@@ -43,43 +44,20 @@
     [MainGameLayer sharedGameLayer].scale = 0.75f;
     [clippingNode addChild: [MainGameLayer sharedGameLayer]];
     clippingNode.position = gameLayerRect.origin;
-    
-    /*CCNodeColor* test = [CCNodeColor nodeWithColor:[CCColor blackColor] width:gameLayerRect.size.width height:gameLayerRect.size.height];
-    test.position = gameLayerRect.origin;
-    test.opacity = 0.2f;
-    test.scale = 0.75f;
-     [self addChild:test]; */
-    
     [self addChild:clippingNode];
-    
-    
-    
-    //CCSprite* stencilSprite = [CCSprite spriteWithImageNamed:@"turn1_mask.png"];
-    //stencilSprite.position = ccp(stencilSprite.contentSize.width / 2, stencilSprite.contentSize.height / 2);
-    
-    //CCSprite* stencilSprite2 = [CCSprite spriteWithImageNamed:@"turn1_mask.png"];
-    //stencilSprite2.position = ccp(stencilSprite.contentSize.width / 2, stencilSprite.contentSize.height / 2);
-    
-    //clippingNode.alphaThreshold = 0.999f;
-    //CCNodeColor* colorNode = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0 green:0 blue:1]];
-    //[clippingNode addChild:colorNode]
-    
-    //[clippingNode addChild:colorNode];
-    //[clippingNode addChild:[MainGameLayer sharedGameLayer] z:0];
-    //clippingNode.position = gameLayerRect.origin;
-    //[self addChild:stencilSprite];
 }
 
--(void) loadResources {
-    CCSpriteFrameCache *frameCache = [CCSpriteFrameCache sharedSpriteFrameCache];
-    [frameCache addSpriteFramesWithFile:@"atlas.plist"];
-}
 
 +(CCScene*) scene {
-    CCScene* menuScene = [CCScene node];
-    GameScreen* menuLayer = [GameScreen node];
-    [menuScene addChild:menuLayer];
-    return menuScene;
+    if(lastGameScreen){
+        [lastGameScreen removeAllChildren];
+    }
+    
+    CCScene* gameScene = [CCScene node];
+    GameScreen* gameScreen = [GameScreen node];
+    lastGameScreen = gameScreen;
+    [gameScene addChild:gameScreen];
+    return gameScene;
 }
 
 -(void)update:(CCTime)delta {

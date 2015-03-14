@@ -16,12 +16,11 @@
 @property (nonatomic) float scrollSpeed;
 
 -(void) scrollBackgroundFor:(float)length;
--(void) buildInitialBackground;
+-(void) startLevel;
 -(void)update:(CCTime)delta;
 -(void) blessCompleted;
 -(void) removeCreep: (Creep*) creep;
 
--(void) restartLevel;
 
 @property (nonatomic) bool isGameOver;
 

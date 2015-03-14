@@ -12,7 +12,8 @@
 #import "GameMusicPlayer.h"
 #import "Constants.h"
 #import "GameLogic.h"
-
+#import "MainMenu.h"
+#import "GameScreen.h"
 
 static GUILayer* _sharedGUILayer;
 
@@ -33,6 +34,13 @@ static GUILayer* _sharedGUILayer;
     float manaBarLRBorder; //left/right border. Just try to find out the correct amount of pixels xD
     float manaSampleSize;
     float manaSampleInitScale;
+    
+    CCSprite* continueIcon;
+    CCSprite* continueLabel;
+    CCSprite* endIcon;;
+    CCSprite* endLabel;
+    
+    CCNode* touchedNode;
 }
 
 @end
@@ -51,11 +59,6 @@ const float progressBarWidth = 150.0f;
         CGSize size = [CCDirector sharedDirector].viewSize;
         self.userInteractionEnabled = TRUE;
         self.contentSize = size;
-        score = 0;
-        [self buildControls];
-        [self setScoreText];
-        
-        
         //[self buildProgressBar];
     }
     return self;
@@ -71,6 +74,13 @@ const float progressBarWidth = 150.0f;
  progressBar.visible = false;
  }*/
 
+-(void) rebuildControls {
+    [self removeAllChildren];
+    score = 0;
+    [self buildControls];
+    [self setScoreText];
+    
+}
 
 -(void) buildControls {
     blessBtn = [CCButton buttonWithTitle:@"" spriteFrame:[CCSpriteFrame frameWithImageNamed:@"bird_button_passive.png"]];
@@ -131,20 +141,27 @@ const float progressBarWidth = 150.0f;
     [blessBtn setBackgroundSpriteFrame:[CCSpriteFrame frameWithImageNamed:@"bird_button_passive.png"] forState: CCControlStateNormal];
 }
 
-/*-(void) buildProgressBar {
- progressBar = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.5f green:0.0f blue:0.5f alpha:1.0f]];
- progressBar.contentSize = CGSizeMake(progressBarWidth, 10);
- progressBar.position = ccp(300, 30);
- [self addChild:progressBar];
- [self hideProgressBar];
- }*/
-
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
-    if([GameLogic sharedGameLogic].isGameOver){
-        return;
-    }
+    
     CGPoint location = [touch locationInView:[touch view]];
     location = [[CCDirector sharedDirector] convertToGL:location];
+    
+    if([GameLogic sharedGameLogic].isGameOver){
+        //if game is over check clicks on end menu sprites(fake buttons)
+        
+        if(CGRectContainsPoint(continueLabel.boundingBox, location)){
+            [continueLabel runAction:[CCActionScaleTo actionWithDuration:0.08 scale:1.1f]];
+            touchedNode = continueLabel;
+        }
+        
+        if(CGRectContainsPoint(endLabel.boundingBox, location)){
+            [endLabel runAction:[CCActionScaleTo actionWithDuration:0.08 scale:1.1f]];
+            touchedNode = endLabel;
+        }
+        
+        return;
+    }
+
     
     float fullWidth = [[CCDirector sharedDirector] viewSize].width;
     MoveDirection direction;
@@ -159,10 +176,30 @@ const float progressBarWidth = 150.0f;
 }
 
 -(void) touchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
+    
+    CGPoint location = [touch locationInView:[touch view]];
+    location = [[CCDirector sharedDirector] convertToGL:location];
+    
     [[Hero sharedHero] stopMoving];
+    
+    if(CGRectContainsPoint(continueLabel.boundingBox, location) && touchedNode == continueLabel){
+        [[CCDirector sharedDirector] replaceScene: [GameScreen scene]];
+        return;
+    }
+    
+    if(CGRectContainsPoint(endLabel.boundingBox, location) && touchedNode == endLabel){
+        [[CCDirector sharedDirector] replaceScene: [MainMenu scene]];
+        return;
+    }
+    
+    
+    [touchedNode runAction:[CCActionScaleTo actionWithDuration:0.08 scale:1.0f]];
+    touchedNode = nil;
+    
 }
 
 -(void) touchCancelled:(UITouch *)touch withEvent:(UIEvent *)event {
+    
 }
 
 -(void) touchMoved:(UITouch *)touch withEvent:(UIEvent *)event {
@@ -218,11 +255,46 @@ const float progressBarWidth = 150.0f;
     blessBtn.enabled = false;
     [blessBtn setBackgroundOpacity:1.0f forState:CCControlStateDisabled];
     
+    /*
     CCLabelTTF* gameOverLabel = [CCLabelTTF labelWithString:@"Game Over" fontName:@"Helvetica" fontSize:24];
-    //[gameOverLabel setColor:[CCColor colorWithWhite:0 alpha:1]];
+    
+     //[gameOverLabel setColor:[CCColor colorWithWhite:0 alpha:1]];
     gameOverLabel.position = ccp(self.contentSize.width / 2, self.contentSize.height / 2 + 50);
     [self addChild: gameOverLabel];
 
+    CCButton* mainMenu = [CCButton buttonWithTitle:@"Main menu" fontName:@"Helvetica" fontSize:24];
+    mainMenu.position = ccp(self.contentSize.width / 2, self.contentSize.height / 2 + 25);
+    mainMenu.block = ^(id sender) {
+        [[CCDirector sharedDirector] replaceScene: [MainMenu scene]];
+    };
+    
+    [self addChild:mainMenu];
+
+    */
+    
+    CCSprite* gameOverLabel = [CCSprite spriteWithImageNamed:@"end_main_label.png"];
+    gameOverLabel.position = ccp(gameOverLabel.contentSize.width / 2 + 150, gameOverLabel.contentSize.height / 2 + 220);
+    [self addChild:gameOverLabel];
+    
+    continueIcon = [CCSprite spriteWithImageNamed:@"restart_icon.png"];
+    continueIcon.position = ccp(continueIcon.contentSize.width / 2 + 150, continueIcon.contentSize.height / 2 + 150);
+    [self addChild:continueIcon];
+    
+    continueLabel = [CCSprite spriteWithImageNamed:@"restart_label.png"];
+    continueLabel.position = ccp(continueLabel.contentSize.width / 2 + 150, continueLabel.contentSize.height / 2 + 110);
+    [self addChild:continueLabel];
+    
+    endIcon = [CCSprite spriteWithImageNamed:@"end_icon.png"];
+    endIcon.position = ccp(endIcon.contentSize.width / 2 + 350, endIcon.contentSize.height / 2 + 150);
+    [self addChild:endIcon];
+    
+    endLabel = [CCSprite spriteWithImageNamed:@"end_label.png"];
+    endLabel.position = ccp(endLabel.contentSize.width / 2 + 330, endLabel.contentSize.height / 2 + 110);
+    [self addChild:endLabel];
+    
+    
+    
+    
     //todo add button for replay and label with score
 }
 

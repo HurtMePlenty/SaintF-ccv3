@@ -34,6 +34,8 @@
 
 -(void) stopAllAndRestoreHero;
 
+-(void) restartLevel;
+
 +(Hero*) sharedHero;
 +(CCSprite*) heroMask;
 

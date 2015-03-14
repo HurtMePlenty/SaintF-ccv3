@@ -17,7 +17,7 @@
 static Hero* _sharedHero;
 
 @interface Hero(){
-    
+    NSArray* maskedMoveFrames;
 }
 
 @end
@@ -44,6 +44,8 @@ static Hero* _sharedHero;
     heroStands = [frameCache spriteFrameByName:@"turn1.png"];
     [heroSprite setSpriteFrame:heroStands];
     self.contentSize = heroStands.rect.size;
+    
+    maskedMoveFrames = [NSArray arrayWithObjects:@"move2_1_mask.png", @"move2_2_mask.png", @"move2_3_mask.png", nil];
 }
 
 -(void) spawnAtPosition:(CGPoint)position {
@@ -76,8 +78,8 @@ static Hero* _sharedHero;
 -(CCSprite*) mask {
     CCSprite* mask;
     if(isMoving) {
-        CCSpriteFrame* moveFrame = [moveFrames objectAtIndex:currentMoveFrameIndex];
-        mask = [CCSprite spriteWithSpriteFrame:moveFrame];
+        NSString* maskFileName = [maskedMoveFrames objectAtIndex:currentMoveFrameIndex];
+        mask = [CCSprite spriteWithImageNamed:maskFileName];
     } else {
         mask = [CCSprite spriteWithImageNamed:@"turn1_mask.png"];
     }
@@ -87,6 +89,10 @@ static Hero* _sharedHero;
         mask.rotationalSkewY = 180;
     };
     return mask;
+}
+
+-(void) restartLevel {
+    heroSprite.opacity = 1.0f;
 }
 
 +(Hero*) sharedHero {

@@ -24,4 +24,6 @@ typedef enum {
 -(void) pauseAnimation;
 -(void) resumeAnimation;
 
+-(void) gameOverStop;
+
 @end

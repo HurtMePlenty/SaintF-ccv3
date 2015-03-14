@@ -22,5 +22,6 @@
 -(void) addScore;
 -(void) updateGameTimeLeft: (CCTime)time;
 -(void) gameOver;
+-(void) rebuildControls;
 
 @end

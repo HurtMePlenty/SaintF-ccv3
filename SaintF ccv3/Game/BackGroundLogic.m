@@ -35,6 +35,9 @@
 }
 
 -(void) buildInitialBackground {
+    [frontLineObjects removeAllObjects];
+    [backStageObjects removeAllObjects];
+    
     for(int i = 0; i < 20; i++)
     {
         [self tryToGenerateBackStage];

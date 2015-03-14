@@ -11,5 +11,6 @@
 @interface Creep (CreepMove)
 
 -(void)startMoving:(MoveDirection)direction;
+-(void)pauseMoveForGameOver;
 
 @end

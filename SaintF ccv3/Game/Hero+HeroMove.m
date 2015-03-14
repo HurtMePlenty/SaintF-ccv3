@@ -9,12 +9,13 @@
 #import "Hero+HeroMove.h"
 #import "Hero+HeroCast.h"
 #import "GameLogic.h"
+#import "Constants.h"
 
 
 @implementation Hero (HeroMove)
 
-float const moveAnimationShift = 10.0f; // shift to 2nd frame of animation
-float const moveAnimationDelay = 0.1f;
+float const moveAnimationShift = MOVE_ANIMATION_SHIFT; // shift to 2nd frame of animation
+float const moveAnimationDelay = MOVE_ANIMATION_DELAY;
 float scrollDistPerStep; //range we move per 1 animation
 bool shouldStopMoving; //when we stop touch
 
@@ -26,9 +27,14 @@ bool shouldStopMoving; //when we stop touch
     
     
     CCSpriteFrameCache* frameCache = [CCSpriteFrameCache sharedSpriteFrameCache];
-    CCSpriteFrame* frame1 = [frameCache spriteFrameByName:@"move_new1.png"];
-    CCSpriteFrame* frame2 = [frameCache spriteFrameByName:@"move_new2.png"];
-    moveFrames = [NSArray arrayWithObjects:frame1, frame2, nil];
+    //CCSpriteFrame* frame1 = [frameCache spriteFrameByName:@"move_new1.png"];
+    //CCSpriteFrame* frame2 = [frameCache spriteFrameByName:@"move_new2.png"];
+    
+    CCSpriteFrame* frame1 = [frameCache spriteFrameByName:@"move2_1.png"];
+    CCSpriteFrame* frame2 = [frameCache spriteFrameByName:@"move2_2.png"];
+    CCSpriteFrame* frame3 = [frameCache spriteFrameByName:@"move2_3.png"];
+    
+    moveFrames = [NSArray arrayWithObjects:frame1, frame2, frame3, nil];
     
     void (^callback)(CGPoint, int) = ^(CGPoint shift, int showingIndex){
         [self animationMoveCallback:shift index:showingIndex];

@@ -46,12 +46,26 @@ static MainGameLayer* _sharedMainLayer = nil;
 {
     [super setOpacity:opacity];
     for(CCNode* child in [self children]) {
-        [child setOpacity:opacity];
+        [self setNodeOpacityWithChilds:child opacity:opacity];
     }
     
     for(CCNode* child in [commonBatch children]) {
-        [child setOpacity:opacity];
+        [self setNodeOpacityWithChilds:child opacity:opacity];
     }
+}
+
+-(void) setNodeOpacityWithChilds:(CCNode*)node opacity:(CGFloat)opacity {
+    [node setOpacity:opacity];
+    for(CCNode* child in [node children]){
+        [self setNodeOpacityWithChilds:child opacity:opacity];
+    }
+}
+
+-(void) restartLevel {
+    self.opacity = 1.0f;
+    [self removeAllChildren];
+    [self addChild: commonBatch]; //do not remove it :)
+    [self.commonBatch removeAllChildren];
 }
 
 +(MainGameLayer*) sharedGameLayer {

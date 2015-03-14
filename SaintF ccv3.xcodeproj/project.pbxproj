@@ -242,6 +242,12 @@
 		C075A9491A857F63005F3056 /* startLabel-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = C075A9461A857F63005F3056 /* startLabel-hd.png */; };
 		C075A94A1A857F63005F3056 /* startLabel-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = C075A9471A857F63005F3056 /* startLabel-ipadhd.png */; };
 		C075A94B1A857F63005F3056 /* startLabel.png in Resources */ = {isa = PBXBuildFile; fileRef = C075A9481A857F63005F3056 /* startLabel.png */; };
+		C075A9541AB49ECA005F3056 /* menuAtlas-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = C075A94E1AB49ECA005F3056 /* menuAtlas-hd.plist */; };
+		C075A9551AB49ECA005F3056 /* menuAtlas-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = C075A94F1AB49ECA005F3056 /* menuAtlas-hd.png */; };
+		C075A9561AB49ECA005F3056 /* menuAtlas-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = C075A9501AB49ECA005F3056 /* menuAtlas-ipadhd.plist */; };
+		C075A9571AB49ECA005F3056 /* menuAtlas-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = C075A9511AB49ECA005F3056 /* menuAtlas-ipadhd.png */; };
+		C075A9581AB49ECA005F3056 /* menuAtlas.plist in Resources */ = {isa = PBXBuildFile; fileRef = C075A9521AB49ECA005F3056 /* menuAtlas.plist */; };
+		C075A9591AB49ECA005F3056 /* menuAtlas.png in Resources */ = {isa = PBXBuildFile; fileRef = C075A9531AB49ECA005F3056 /* menuAtlas.png */; };
 		C0A6FB5E193F9465009F5774 /* Creep+CreepMove.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A6FB5D193F9465009F5774 /* Creep+CreepMove.m */; };
 		C0A6FB6719462B36009F5774 /* paper-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = C0A6FB6019462B36009F5774 /* paper-hd.png */; };
 		C0A6FB6819462B36009F5774 /* paper-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = C0A6FB6119462B36009F5774 /* paper-ipadhd.png */; };
@@ -748,6 +754,12 @@
 		C075A9471A857F63005F3056 /* startLabel-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "startLabel-ipadhd.png"; sourceTree = "<group>"; };
 		C075A9481A857F63005F3056 /* startLabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startLabel.png; sourceTree = "<group>"; };
 		C075A94C1A8588AE005F3056 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		C075A94E1AB49ECA005F3056 /* menuAtlas-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "menuAtlas-hd.plist"; path = "Resources/menu atlas/menuAtlas-hd.plist"; sourceTree = "<group>"; };
+		C075A94F1AB49ECA005F3056 /* menuAtlas-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menuAtlas-hd.png"; path = "Resources/menu atlas/menuAtlas-hd.png"; sourceTree = "<group>"; };
+		C075A9501AB49ECA005F3056 /* menuAtlas-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "menuAtlas-ipadhd.plist"; path = "Resources/menu atlas/menuAtlas-ipadhd.plist"; sourceTree = "<group>"; };
+		C075A9511AB49ECA005F3056 /* menuAtlas-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menuAtlas-ipadhd.png"; path = "Resources/menu atlas/menuAtlas-ipadhd.png"; sourceTree = "<group>"; };
+		C075A9521AB49ECA005F3056 /* menuAtlas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = menuAtlas.plist; path = "Resources/menu atlas/menuAtlas.plist"; sourceTree = "<group>"; };
+		C075A9531AB49ECA005F3056 /* menuAtlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menuAtlas.png; path = "Resources/menu atlas/menuAtlas.png"; sourceTree = "<group>"; };
 		C0A6FB5C193F9465009F5774 /* Creep+CreepMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Creep+CreepMove.h"; sourceTree = "<group>"; };
 		C0A6FB5D193F9465009F5774 /* Creep+CreepMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Creep+CreepMove.m"; sourceTree = "<group>"; };
 		C0A6FB6019462B36009F5774 /* paper-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper-hd.png"; sourceTree = "<group>"; };
@@ -860,6 +872,7 @@
 		C02B648819316E6100717D1D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C075A94D1AB49EB5005F3056 /* menuAtlas */,
 				C075A93F1A7EBD88005F3056 /* start */,
 				C075A9321A7C6DED005F3056 /* manabar */,
 				C075A9301A7C66FC005F3056 /* mana_piece2.png */,
@@ -1777,6 +1790,19 @@
 			path = Resources/start;
 			sourceTree = "<group>";
 		};
+		C075A94D1AB49EB5005F3056 /* menuAtlas */ = {
+			isa = PBXGroup;
+			children = (
+				C075A94E1AB49ECA005F3056 /* menuAtlas-hd.plist */,
+				C075A94F1AB49ECA005F3056 /* menuAtlas-hd.png */,
+				C075A9501AB49ECA005F3056 /* menuAtlas-ipadhd.plist */,
+				C075A9511AB49ECA005F3056 /* menuAtlas-ipadhd.png */,
+				C075A9521AB49ECA005F3056 /* menuAtlas.plist */,
+				C075A9531AB49ECA005F3056 /* menuAtlas.png */,
+			);
+			name = menuAtlas;
+			sourceTree = "<group>";
+		};
 		C0A6FB5B193F9448009F5774 /* Creep */ = {
 			isa = PBXGroup;
 			children = (
@@ -1905,7 +1931,9 @@
 				C02B649519316E6100717D1D /* Icon@2x.png in Resources */,
 				C0A6FB6719462B36009F5774 /* paper-hd.png in Resources */,
 				C02B64A719316E6100717D1D /* Icon-Small@2x.png in Resources */,
+				C075A9581AB49ECA005F3056 /* menuAtlas.plist in Resources */,
 				C0A6FB6919462B36009F5774 /* paper.png in Resources */,
+				C075A9561AB49ECA005F3056 /* menuAtlas-ipadhd.plist in Resources */,
 				C0F073AF1A558C7D00C88616 /* atlas-ipadhd.plist in Resources */,
 				C02B649919316E6100717D1D /* Icon-72@2x.png in Resources */,
 				C075A93E1A7C6DED005F3056 /* mana_sample.png in Resources */,
@@ -1927,6 +1955,9 @@
 				C0AC2BD1194D04FF008E1BBA /* paper-iphone5hd.png in Resources */,
 				C0A6FB6A19462B36009F5774 /* wood-hd.png in Resources */,
 				C02B649719316E6100717D1D /* Icon-72.png in Resources */,
+				C075A9571AB49ECA005F3056 /* menuAtlas-ipadhd.png in Resources */,
+				C075A9541AB49ECA005F3056 /* menuAtlas-hd.plist in Resources */,
+				C075A9551AB49ECA005F3056 /* menuAtlas-hd.png in Resources */,
 				C02B65E519316E6300717D1D /* LICENSE_cocos2d.txt in Resources */,
 				C02B648E19316E6100717D1D /* Default-568h@2x.png in Resources */,
 				C075A93A1A7C6DED005F3056 /* mana_piece-ipadhd.png in Resources */,
@@ -1945,6 +1976,7 @@
 				C0F073B11A558C7D00C88616 /* atlas.plist in Resources */,
 				C02B649B19316E6100717D1D /* Icon-76.png in Resources */,
 				C02B667119316E6300717D1D /* ChangeLog in Resources */,
+				C075A9591AB49ECA005F3056 /* menuAtlas.png in Resources */,
 				C075A9491A857F63005F3056 /* startLabel-hd.png in Resources */,
 				C075A9451A7EBD88005F3056 /* startPicture.png in Resources */,
 				C02B64B019316E6100717D1D /* iTunesArtwork@2x in Resources */,

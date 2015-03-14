@@ -18,7 +18,9 @@
 @implementation Level
 
 +(void) buildLevel {
+    [[MainGameLayer sharedGameLayer] restartLevel];
     Hero* hero = [Hero sharedHero];
+    [hero restartLevel];
     CGSize heroSize = hero.contentSize;
     float spawnX = heroSize.width / 2 + [hero leftBorder];
     float spawnY = heroSize.height / 2;
@@ -29,20 +31,8 @@
 }
 
 +(void) buildBackground {
-    [[GameLogic sharedGameLogic] buildInitialBackground];
+    [[GameLogic sharedGameLogic] startLevel];
 }
 
-+(void) gameOver {
-    CCActionFadeTo* fadeOut = [CCActionFadeTo actionWithDuration:1.0f opacity:0.3f];
-    CCActionCallBlock* callback = [CCActionCallBlock actionWithBlock: ^(void){
-        [[GameLogic sharedGameLogic] restartLevel];
-    }];
-    
-    CCActionSequence *sequence = [CCActionSequence actions:fadeOut, callback, nil];
-    [[MainGameLayer sharedGameLayer] runAction: sequence];
-    
-    //[[CCDirector sharedDirector] replaceScene: [MainMenu scene]];
-    
-}
 
 @end

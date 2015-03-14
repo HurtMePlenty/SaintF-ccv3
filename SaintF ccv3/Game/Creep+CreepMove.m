@@ -94,5 +94,9 @@
     [moveAnimation setShift:nextShift];
 }
 
+-(void) pauseMoveForGameOver {
+    [moveAnimation gameOverStop];
+}
+
 
 @end

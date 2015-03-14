@@ -12,9 +12,11 @@
 #import "Creep.h"
 #import "BackGroundLogic.h"
 #import "Hero.h"
+#import "Hero+HeroMove.h"
 #import "GUILayer.h"
 #import "Constants.h"
 #import "Level.h"
+#import "Creep+CreepMove.h"
 
 static GameLogic* _sharedGameLogic;
 
@@ -42,13 +44,16 @@ static GameLogic* _sharedGameLogic;
         winSize = [MainGameLayer size];
         [self buildLogics];
         creeps = [[NSMutableArray alloc] init];
-        gameTimeLeft = GAME_TIME_MAX; //seconds
+       
     }
     return self;
 }
 
--(void) buildInitialBackground {
+-(void) startLevel {
     isGameOver = false;
+     gameTimeLeft = GAME_TIME_MAX; //seconds
+    [creeps removeAllObjects];
+    [[GUILayer sharedGUILayer] rebuildControls];
     [backGroundLogic buildInitialBackground];
 }
 
@@ -60,9 +65,20 @@ static GameLogic* _sharedGameLogic;
     [self executeScrolling:scrollSpeed * delta];
     gameTimeLeft -= delta;
     [[GUILayer sharedGUILayer] updateGameTimeLeft:gameTimeLeft];
-    if(gameTimeLeft <= 0){
+    if(gameTimeLeft <= 0 && !isGameOver){
         isGameOver = true;
-        [Level gameOver];
+        [[Hero sharedHero] stopMoving];
+        CCActionFadeTo* fadeOut = [CCActionFadeTo actionWithDuration:1.0f opacity:0.2f];
+        CCActionCallBlock* callback = [CCActionCallBlock actionWithBlock: ^(void){
+            //if we need to do smt after fadeout
+        }];
+        CCActionSequence *sequence = [CCActionSequence actions:fadeOut, callback, nil];
+        
+        for(Creep* creep in creeps){
+            [creep pauseMoveForGameOver];
+        }
+        
+        [[MainGameLayer sharedGameLayer] runAction: sequence];
         [[GUILayer sharedGUILayer] gameOver];
     }
 }
@@ -129,6 +145,9 @@ static GameLogic* _sharedGameLogic;
 }
 
 -(void) blessCompleted {
+    if(isGameOver){
+        return;
+    }
     for(int i = 0; i < creeps.count; i++) {
         Creep* creep = [creeps objectAtIndex:i];
         CGRect heroRect = [[Hero sharedHero] boundingBox];
@@ -147,11 +166,6 @@ static GameLogic* _sharedGameLogic;
 
 -(void) removeCreep: (Creep*) creep {
     [creeps removeObject:creep];
-}
-
--(void) restartLevel {
-    [creeps removeAllObjects];
-    [backGroundLogic restartLevel];
 }
 
 +(GameLogic*) sharedGameLogic {
